@@ -61,7 +61,7 @@ static NSString *kFontName = @"Cuprum-Regular";
     self.alpha = 0;
   }];
   int stringLength = word.text.length;
-  stresssed = [word.stressed intValue];
+  stresssed = [wordSource.stressed intValue];
   NSRange fullRange = NSMakeRange(0, stringLength);
   [self vowelsInWord:word.text];
   float fontSize = [self recommendedFontSizeForWord:word.text];

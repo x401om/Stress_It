@@ -31,6 +31,7 @@
 		73853FDA165AC01E0006A530 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73853FD9165AC01E0006A530 /* GameKit.framework */; };
 		C90D99B6165A1DAA00E9DDF9 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C90D99B5165A1DAA00E9DDF9 /* Icon.png */; };
 		C90D99B9165A1DC300E9DDF9 /* Default-Landscape@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C90D99B8165A1DC300E9DDF9 /* Default-Landscape@2x.png */; };
+		C92D547B1660DCBB00D14294 /* StressIt.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = C92D547A1660DCBB00D14294 /* StressIt.sqlite */; };
 		C92E4742163317EE00B53E34 /* Generator.m in Sources */ = {isa = PBXBuildFile; fileRef = C92E4741163317EE00B53E34 /* Generator.m */; };
 		C93228DE163C6F0D001536A1 /* NLSpinner.m in Sources */ = {isa = PBXBuildFile; fileRef = C93228DD163C6F0D001536A1 /* NLSpinner.m */; };
 		C93228E2163C78FD001536A1 /* NLLearningManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C93228E1163C78FD001536A1 /* NLLearningManager.m */; };
@@ -57,9 +58,6 @@
 		C95CD3EA165109B30015B2C5 /* NLCD_Word.m in Sources */ = {isa = PBXBuildFile; fileRef = C95CD3E9165109B30015B2C5 /* NLCD_Word.m */; };
 		C95CD3ED165109B30015B2C5 /* NLCD_Block.m in Sources */ = {isa = PBXBuildFile; fileRef = C95CD3EC165109B30015B2C5 /* NLCD_Block.m */; };
 		C95CD3F0165109B40015B2C5 /* NLCD_Paragraph.m in Sources */ = {isa = PBXBuildFile; fileRef = C95CD3EF165109B40015B2C5 /* NLCD_Paragraph.m */; };
-		C97BAE6C1659678A0052FA38 /* All_Forms.txt in Resources */ = {isa = PBXBuildFile; fileRef = 67C0DBA11625E42E00214C52 /* All_Forms.txt */; };
-		C97BAE6F1659688D0052FA38 /* Tasks.plist in Resources */ = {isa = PBXBuildFile; fileRef = C97BAE6E1659688D0052FA38 /* Tasks.plist */; };
-		C97BAE7216596C7B0052FA38 /* dataArr.plist in Resources */ = {isa = PBXBuildFile; fileRef = C92E473A1633127C00B53E34 /* dataArr.plist */; };
 		C986581D1625A6F60035FB7D /* NLWord.m in Sources */ = {isa = PBXBuildFile; fileRef = C986581C1625A6F60035FB7D /* NLWord.m */; };
 		C98658231625A7740035FB7D /* NLDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = C98658221625A7740035FB7D /* NLDictionary.m */; };
 		C98658291625A7990035FB7D /* NLWordBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = C98658281625A7990035FB7D /* NLWordBlock.m */; };
@@ -123,6 +121,7 @@
 		73853FD9165AC01E0006A530 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		C90D99B5165A1DAA00E9DDF9 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		C90D99B8165A1DC300E9DDF9 /* Default-Landscape@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape@2x.png"; sourceTree = "<group>"; };
+		C92D547A1660DCBB00D14294 /* StressIt.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = StressIt.sqlite; sourceTree = SOURCE_ROOT; };
 		C92E473A1633127C00B53E34 /* dataArr.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = dataArr.plist; sourceTree = "<group>"; };
 		C92E4740163317EE00B53E34 /* Generator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Generator.h; sourceTree = "<group>"; };
 		C92E4741163317EE00B53E34 /* Generator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Generator.m; sourceTree = "<group>"; };
@@ -434,6 +433,7 @@
 		C98E2A341624B6A600AFC6AD /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C92D547A1660DCBB00D14294 /* StressIt.sqlite */,
 				C95CD3F416510AC00015B2C5 /* Fonts */,
 				C95CD3F516510AD10015B2C5 /* Pictures */,
 				67C0DBA11625E42E00214C52 /* All_Forms.txt */,
@@ -575,8 +575,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C97BAE7216596C7B0052FA38 /* dataArr.plist in Resources */,
-				C97BAE6C1659678A0052FA38 /* All_Forms.txt in Resources */,
 				67E4F9081647FBB500AC0C5B /* Cuprum-Regular.ttf in Resources */,
 				67E4F9091647FBB500AC0C5B /* Cuprum.otf in Resources */,
 				67564BE91645A8C0007D2E9A /* Lobster 1.4.otf in Resources */,
@@ -607,10 +605,10 @@
 				C93943751647B96C0043668B /* backButton.png in Resources */,
 				C93943771647B96C0043668B /* backToMenuButton.png in Resources */,
 				C93943801647C77E0043668B /* NLResultsViewController.xib in Resources */,
-				C97BAE6F1659688D0052FA38 /* Tasks.plist in Resources */,
 				C90D99B6165A1DAA00E9DDF9 /* Icon.png in Resources */,
 				C90D99B9165A1DC300E9DDF9 /* Default-Landscape@2x.png in Resources */,
 				73853FD8165ABE930006A530 /* NLGameViewController.xib in Resources */,
+				C92D547B1660DCBB00D14294 /* StressIt.sqlite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
