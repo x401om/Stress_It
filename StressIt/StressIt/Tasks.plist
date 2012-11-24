@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>Title</key>
+		<string>Именительный падеж множественного числа существительного</string>
+		<key>Declaration</key>
+		<string>Выберите правильную форму (где требуетя) и поставьте ударение</string>
+		<key>Tasks</key>
+		<array>
+			<dict>
+				<key>Title</key>
+				<string>-а/-я</string>
+				<key>Rule</key>
+				<string>Выберите правильную форму (где требуетя) и поставьте ударение</string>
+				<key>Words</key>
+				<array>
+					<string>борт — (высокопрочные) борта́ {бо́рты}</string>
+					<string>бу́фер — (железнодорожные) буфера́ {бу́феры}</string>
+					<string>ве́ксель — (переводные) векселя́ {ве́ксели}</string>
+					<string>ве́нзель — (замысловатые) вензеля́ {ве́нзели}</string>
+					<string>во́рох — (громадные) вороха́ {во́рохи}</string>
+					<string>дире́ктор — (неподкупные) директора́ {дире́кторы}</string>
+					<string>инспе́ктор — (федеральные) инспектора́ {инспе́кторы}</string>
+					<string>ка́тер — (скоростные) катера́ {ка́теры}</string>
+					<string>ки́тель — (поварские) кителя́ {ки́тели}</string>
+					<string>кле́вер — (свежие) клевера́ {кле́веры}</string>
+					<string>ку́зов — (грузопассажирские) кузова́ {ку́зовы}</string>
+					<string>ку́пол — (золотые) купола́ {ку́полы}</string>
+					<string>ку́чер — (пьяные) кучера́ {ку́черы}</string>
+					<string>ле́мех — (треугольные) лемеха́ {ле́мехи}</string>
+					<string>не́вод — (озёрные) невода́ {не́воды}</string>
+					<string>о́корок — (куриные) окорока́ {о́короки}</string>
+					<string>о́круг — (административные) округа́ {о́круги}</string>
+					<string>о́рдер — (судебные) ордера́ {о́рдеры}</string>
+					<string>о́ткуп — (узаконенные) откупа́ {о́ткупы}</string>
+					<string>па́спорт — (потрёпанные) паспорта́ {па́спорты}</string>
+					<string>по́греб — (глубокие) погреба́ {по́гребы}</string>
+					<string>профе́ссор — (влиятельные) профессора́ {профе́ссоры}</string>
+					<string>сто́рож — (грустные) сторожа́ {сто́рожи}</string>
+					<string>те́нор — (драматические) тенора́ {те́норы}</string>
+					<string>фе́льдшер — (отважные) фельдшера́ {фе́льдшеры}</string>
+					<string>флю́гер — (декоративные) флюгера́ {флю́геры}</string>
+					<string>ху́тор — (дальние) хутора́ {ху́торы}</string>
+					<string>шта́бель — (ровные) штабеля́ {шта́бели}</string>
+					<string>ште́мпель — (почтовые) штемпеля́ {ште́мпели}</string>
+					<string>шу́лер — (хитроумные) шулера́ {шу́леры}</string>
+				</array>
+				<key>Exceptions</key>
+				<array/>
+			</dict>
+			<dict>
+				<key>Title</key>
+				<string>-ы/-и</string>
+				<key>Rule</key>
+				<string>Выберите правильную форму (где требуетя) и поставьте ударение</string>
+				<key>Words</key>
+				<array>
+					<string>бу́нкер — (секретные) бу́нкеры {бункера́}</string>
+					<string>бухга́лтер — (главные) бухга́лтеры {бухгалтера́}</string>
+					<string>во́зраст — (человеческие) во́зрасты {возраста́}</string>
+					<string>го́спиталь — (полевые) го́спитали {госпиталя́}</string>
+					<string>гри́фель — (карандашные) гри́фели {грифеля́}</string>
+					<string>диспе́тчер — (весёлые) диспе́тчеры {диспетчера́}</string>
+					<string>догово́р — (дипломатические) догово́ры {договора́}</string>
+					<string>дра́йвер — (компьютерные) дра́йверы {драйвера́}</string>
+					<string>инжене́р — (ведущие) инжене́ры {инженера́}</string>
+					<string>констру́ктор — (советские) констру́кторы {конструктора́}</string>
+					<string>корре́ктор — (квалифицированные) корре́кторы {корректора́}</string>
+					<string>ле́ктор — (скучные) ле́кторы {лектора́}</string>
+					<string>пле́йер — (китайские) пле́йеры {плейера́}</string>
+					<string>при́нтер — (сетевые) при́нтеры {принтера́}</string>
+					<string>проже́ктор — (сверхмощные) проже́кторы {прожектора́}</string>
+					<string>реда́ктор — (невнимательные) реда́кторы {редактора́}</string>
+					<string>ре́ктор — (московские) ре́кторы {ректора́}</string>
+					<string>сви́тер — (вязаные) сви́теры {свитера́}</string>
+					<string>се́ктор — (экономические) се́кторы {сектора́}</string>
+					<string>сле́сарь — (трезвые) сле́сари {слесаря́}</string>
+					<string>сна́йпер — (уставшие) сна́йперы {снайпера́}</string>
+					<string>то́карь — (иностранные) то́кари {токаря́}</string>
+					<string>тре́нер — (строгие) тре́неры {тренера́}</string>
+					<string>флот — (тихоокеанские) фло́ты {флота́}</string>
+					<string>фронт — (восточные) фронты́ {фронта́}</string>
+					<string>шофёр — (притихшие) шофёры {шофера́}</string>
+				</array>
+				<key>Exceptions</key>
+				<array>
+					<string>воз — (конные) возы́ {во́зы}</string>
+					<string>грунт — (скальные) гру́нты {грунты́}</string>
+					<string>дья́кон — (молодые) дья́коны {дьяконы́}</string>
+					<string>комба́йнер — (волгоградские) комба́йнеры {комбайнё́ры}</string>
+					<string>лифт — (скоростные) ли́фты {лифты́}</string>
+					<string>патру́ль — (дорожные) патрули́ {патру́ли}</string>
+					<string>пе́карь — (талантливые) пе́кари {пекари́}</string>
+					<string>пи́сарь — (искусные) пи́сари {писари́}</string>
+					<string>порт — (морские) по́рты {порты́}</string>
+					<string>пригово́р — (суровые) пригово́ры {приговора́}</string>
+					<string>склад — (овощные) склады́ {скла́ды}</string>
+					<string>торт — (сливочные) то́рты {торты́}</string>
+					<string>штаб — (оперативные) штабы́ {шта́бы}</string>
+				</array>
+			</dict>
+			<dict>
+				<key>Title</key>
+				<string>В ряде случаев различия в образовании форм множественного числа существительных связаны с разными значениями слов.</string>
+				<key>Rule</key>
+				<string>Выберите форму слова в соответствии с лексическим значением и поставьте ударение.</string>
+				<key>Words</key>
+				<array>
+					<string>адреса́ (новоселов) {а́дресы}</string>
+				</array>
+				<key>Exceptions</key>
+				<array/>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>Title</key>
+		<string></string>
+		<key>Declaration</key>
+		<string></string>
+		<key>Tasks</key>
+		<array>
+			<dict>
+				<key>Title</key>
+				<string></string>
+				<key>Rule</key>
+				<string></string>
+				<key>Words</key>
+				<array/>
+				<key>Exceptions</key>
+				<array/>
+			</dict>
+			<dict>
+				<key>Title</key>
+				<string></string>
+				<key>Rule</key>
+				<string></string>
+				<key>Words</key>
+				<array/>
+				<key>Exceptions</key>
+				<array/>
+			</dict>
+			<dict>
+				<key>Title</key>
+				<string></string>
+				<key>Rule</key>
+				<string></string>
+				<key>Words</key>
+				<array/>
+				<key>Exceptions</key>
+				<array/>
+			</dict>
+			<dict>
+				<key>Title</key>
+				<string></string>
+				<key>Rule</key>
+				<string></string>
+				<key>Words</key>
+				<array/>
+				<key>Exceptions</key>
+				<array/>
+			</dict>
+			<dict>
+				<key>Title</key>
+				<string></string>
+				<key>Rule</key>
+				<string></string>
+				<key>Words</key>
+				<array/>
+				<key>Exceptions</key>
+				<array/>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>Title</key>
+		<string></string>
+		<key>Declaration</key>
+		<string></string>
+		<key>Tasks</key>
+		<array>
+			<dict>
+				<key>Title</key>
+				<string></string>
+				<key>Rule</key>
+				<string></string>
+				<key>Words</key>
+				<array/>
+				<key>Exceptions</key>
+				<array/>
+			</dict>
+			<dict>
+				<key>Title</key>
+				<string></string>
+				<key>Rule</key>
+				<string></string>
+				<key>Words</key>
+				<array/>
+				<key>Exceptions</key>
+				<array/>
+			</dict>
+			<dict>
+				<key>Title</key>
+				<string></string>
+				<key>Rule</key>
+				<string></string>
+				<key>Words</key>
+				<array/>
+				<key>Exceptions</key>
+				<array/>
+			</dict>
+			<dict>
+				<key>Title</key>
+				<string></string>
+				<key>Rule</key>
+				<string></string>
+				<key>Words</key>
+				<array/>
+				<key>Exceptions</key>
+				<array/>
+			</dict>
+			<dict>
+				<key>Title</key>
+				<string></string>
+				<key>Rule</key>
+				<string></string>
+				<key>Words</key>
+				<array/>
+				<key>Exceptions</key>
+				<array/>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>Title</key>
+		<string></string>
+		<key>Declaration</key>
+		<string></string>
+		<key>Tasks</key>
+		<array>
+			<dict>
+				<key>Title</key>
+				<string></string>
+				<key>Rule</key>
+				<string></string>
+				<key>Words</key>
+				<array/>
+				<key>Exceptions</key>
+				<array/>
+			</dict>
+			<dict>
+				<key>Title</key>
+				<string></string>
+				<key>Rule</key>
+				<string></string>
+				<key>Words</key>
+				<array/>
+				<key>Exceptions</key>
+				<array/>
+			</dict>
+			<dict>
+				<key>Title</key>
+				<string></string>
+				<key>Rule</key>
+				<string></string>
+				<key>Words</key>
+				<array/>
+				<key>Exceptions</key>
+				<array/>
+			</dict>
+			<dict>
+				<key>Title</key>
+				<string></string>
+				<key>Rule</key>
+				<string></string>
+				<key>Words</key>
+				<array/>
+				<key>Exceptions</key>
+				<array/>
+			</dict>
+			<dict>
+				<key>Title</key>
+				<string></string>
+				<key>Rule</key>
+				<string></string>
+				<key>Words</key>
+				<array/>
+				<key>Exceptions</key>
+				<array/>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>Title</key>
+		<string></string>
+		<key>Declaration</key>
+		<string></string>
+		<key>Tasks</key>
+		<array>
+			<dict>
+				<key>Title</key>
+				<string></string>
+				<key>Rule</key>
+				<string></string>
+				<key>Words</key>
+				<array/>
+				<key>Exceptions</key>
+				<array/>
+			</dict>
+			<dict>
+				<key>Title</key>
+				<string></string>
+				<key>Rule</key>
+				<string></string>
+				<key>Words</key>
+				<array/>
+				<key>Exceptions</key>
+				<array/>
+			</dict>
+			<dict>
+				<key>Title</key>
+				<string></string>
+				<key>Rule</key>
+				<string></string>
+				<key>Words</key>
+				<array/>
+				<key>Exceptions</key>
+				<array/>
+			</dict>
+			<dict>
+				<key>Title</key>
+				<string></string>
+				<key>Rule</key>
+				<string></string>
+				<key>Words</key>
+				<array/>
+				<key>Exceptions</key>
+				<array/>
+			</dict>
+			<dict>
+				<key>Title</key>
+				<string></string>
+				<key>Rule</key>
+				<string></string>
+				<key>Words</key>
+				<array/>
+				<key>Exceptions</key>
+				<array/>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>Title</key>
+		<string></string>
+		<key>Declaration</key>
+		<string></string>
+		<key>Tasks</key>
+		<array>
+			<dict>
+				<key>Title</key>
+				<string></string>
+				<key>Rule</key>
+				<string></string>
+				<key>Words</key>
+				<array/>
+				<key>Exceptions</key>
+				<array/>
+			</dict>
+			<dict>
+				<key>Title</key>
+				<string></string>
+				<key>Rule</key>
+				<string></string>
+				<key>Words</key>
+				<array/>
+				<key>Exceptions</key>
+				<array/>
+			</dict>
+			<dict>
+				<key>Title</key>
+				<string></string>
+				<key>Rule</key>
+				<string></string>
+				<key>Words</key>
+				<array/>
+				<key>Exceptions</key>
+				<array/>
+			</dict>
+			<dict>
+				<key>Title</key>
+				<string></string>
+				<key>Rule</key>
+				<string></string>
+				<key>Words</key>
+				<array/>
+				<key>Exceptions</key>
+				<array/>
+			</dict>
+			<dict>
+				<key>Title</key>
+				<string></string>
+				<key>Rule</key>
+				<string></string>
+				<key>Words</key>
+				<array/>
+				<key>Exceptions</key>
+				<array/>
+			</dict>
+		</array>
+	</dict>
+</array>
+</plist>

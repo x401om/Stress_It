@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1811" systemVersion="12C60" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Block" representedClassName="NLCD_Block" syncable="YES">
+        <attribute name="firstLetter" optional="YES" attributeType="String" defaultValueString="0" syncable="YES"/>
+        <attribute name="title" attributeType="String" defaultValueString="defaulTitle" spotlightIndexingEnabled="YES" syncable="YES"/>
+        <relationship name="words" optional="YES" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="Word" syncable="YES"/>
+    </entity>
+    <entity name="Dictionary" representedClassName="NLCD_Dictionary" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" minValueString="0" defaultValueString="defaultDictName" syncable="YES"/>
+        <relationship name="blocks" optional="YES" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="Block" syncable="YES"/>
+    </entity>
+    <entity name="Paragraph" representedClassName="NLCD_Paragraph" syncable="YES">
+        <attribute name="declaration" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="number" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" spotlightIndexingEnabled="YES" syncable="YES"/>
+        <relationship name="tasks" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Task" syncable="YES"/>
+    </entity>
+    <entity name="Task" representedClassName="NLCD_Task" syncable="YES">
+        <attribute name="point" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="rule" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="exceptions" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Word" syncable="YES"/>
+        <relationship name="words" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Word" syncable="YES"/>
+    </entity>
+    <entity name="Word" representedClassName="NLCD_Word" syncable="YES">
+        <attribute name="example" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="info" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="secondStressed" optional="YES" attributeType="Integer 16" defaultValueString="-1" syncable="YES"/>
+        <attribute name="state" optional="YES" attributeType="Integer 16" minValueString="0" defaultValueString="0" syncable="YES"/>
+        <attribute name="stressed" attributeType="Integer 16" minValueString="-1" maxValueString="30" defaultValueString="-1" syncable="YES"/>
+        <attribute name="text" attributeType="String" minValueString="1" maxValueString="30" defaultValueString="defaultText" spotlightIndexingEnabled="YES" syncable="YES"/>
+        <relationship name="fails" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Word" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Block" positionX="277" positionY="41" width="128" height="88"/>
+        <element name="Dictionary" positionX="189" positionY="-135" width="128" height="73"/>
+        <element name="Paragraph" positionX="-92" positionY="-81" width="128" height="103"/>
+        <element name="Task" positionX="-144" positionY="107" width="128" height="118"/>
+        <element name="Word" positionX="45" positionY="248" width="216" height="148"/>
+    </elements>
+</model>
