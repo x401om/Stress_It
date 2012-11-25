@@ -753,7 +753,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "StressIt/StressIt-Prefix.pch";
 				INFOPLIST_FILE = "StressIt/StressIt-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "Stress It";
 				WRAPPER_EXTENSION = app;
 			};
@@ -765,7 +765,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "StressIt/StressIt-Prefix.pch";
 				INFOPLIST_FILE = "StressIt/StressIt-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "Stress It";
 				WRAPPER_EXTENSION = app;
 			};

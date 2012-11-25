@@ -83,5 +83,16 @@
     return array;
 }
 
++ (NSArray *)getFixWordsInAmount:(int)amount {
+    NLCD_Dictionary *dict = [NLCD_Dictionary findDictionaryWithType:DictionaryTypeLearning];
+    
+    NSMutableArray *array = [[NSMutableArray alloc] initWithCapacity:amount];
+    for (int i = 0; i < amount; ++i) {
+        NLCD_Block *block = [dict.blocks objectAtIndex:i];
+        [array addObject:[block.words objectAtIndex:0]];
+    }
+    
+    return array;
+}
 
 @end

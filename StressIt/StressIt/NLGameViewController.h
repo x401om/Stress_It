@@ -16,7 +16,7 @@
 
 @property GKSession *session;
 @property (strong, nonatomic) NLLabel *word;
-@property NSArray *wordsForGame;
+@property (strong) NSArray *wordsForGame;
 @property int playerScores;
 @property (weak, nonatomic) IBOutlet UILabel *myScores;
 @property (weak, nonatomic) IBOutlet UILabel *apponentScore;

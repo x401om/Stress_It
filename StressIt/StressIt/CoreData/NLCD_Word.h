@@ -10,7 +10,7 @@
 #import <CoreData/CoreData.h>
 
 
-@interface NLCD_Word : NSManagedObject
+@interface NLCD_Word : NSManagedObject <NSCoding>
 
 @property (nonatomic, retain) NSString * example;
 @property (nonatomic, retain) NSString * info;
@@ -26,5 +26,6 @@
 + (void)saveContext;
 
 + (NSArray *)getRandomWordsInAmount:(int)amount;
++ (NSArray *)getFixWordsInAmount:(int)amount;
 
 @end

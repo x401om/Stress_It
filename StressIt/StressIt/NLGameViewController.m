@@ -9,9 +9,11 @@
 #import "NLGameViewController.h"
 #import "Generator.h"
 
-#define kDefaultRandomNumberOfWordsToPlay 100
+#define kDefaultRandomNumberOfWordsToPlay 20
 
 @interface NLGameViewController ()
+
+@property int randIndex;
 
 @end
 
@@ -31,20 +33,25 @@
 }
 
 - (void)setUpLabel {
-    self.word = [[NLLabel alloc] initWithWord:[self.wordsForGame objectAtIndex:[self randomIndex]]];
+    self.word = [[NLLabel alloc] initWithWord:[self.wordsForGame lastObject]];
     
     self.word.center = self.view.center;
+    self.word.delegate = self;
     [self.view addSubview:self.word];
 }
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.wordsForGame = [NLCD_Word getRandomWordsInAmount:kDefaultRandomNumberOfWordsToPlay];
+    
+#warning изменить getRandomWordsInAmount т.к. набор слов у парней должен быть одинаковый
+    
+    self.wordsForGame = [NLCD_Word getFixWordsInAmount:kDefaultRandomNumberOfWordsToPlay];
+    
     self.playerScores = 0;
     self.myScores.text = self.apponentScore.text = [NSString stringWithFormat:@"%d", self.playerScores];
     
     [self setUpLabel];
-//    [self setUpConnection];
+    [self setUpConnection];
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -90,11 +97,15 @@
     }
 }
 
-- (void) receiveData:(NSData *)data fromPeer:(NSString *)peer inSession: (GKSession *)session context:(void *)context {
+- (void)receiveData:(NSData *)data fromPeer:(NSString *)peer inSession: (GKSession *)session context:(void *)context {
+    
     int *arr = (int *)[data bytes];
     BOOL answer = *arr;
     int apponentScore = *(arr+1);
+    int index = *(arr+2);
+                  
     if (answer) {
+        [self.word changeWordWithWord:[self.wordsForGame objectAtIndex:index]];
         self.apponentScore.text = [NSString stringWithFormat:@"%d", apponentScore];
     }
 }
@@ -109,30 +120,31 @@
 
 #pragma mark send data via NLLabelDelegate
 
-- (void)userTouchedOnLetter:(NSNumber *)letter {
-        NSLog(@"letter %@ touched", letter);
-}
-
 - (void)changeWordAndScore {
-    [self.word changeWordWithWord:[self.wordsForGame objectAtIndex:[self randomIndex]]];
-    [UIView animateWithDuration:3 animations:^{
+    [UIView animateWithDuration:1.5 animations:^{
         self.myScores.text = [NSString stringWithFormat:@"%d", self.playerScores];
     }];
+    
+    self.randIndex = [self randomIndex];
+    [self.word changeWordWithWord:[self.wordsForGame objectAtIndex:self.randIndex]];
 }
 
 - (void)userAnsweredWithAnswer:(BOOL)answer {
     if (answer) {
         ++self.playerScores;
-        [self changeWordAndScore];
         NSLog(@"right answer");
     }
     else {
         NSLog(@"wrong answer");
     }
-    if (self.session) {
-        int arr[2];
+    
+    [self changeWordAndScore];
+
+    if (self.session) { //send data about: users current scores, type of answer and index of rand word
+        int arr[3];
         arr[0] = answer;
         arr[1] = self.playerScores;
+        arr[2] = self.randIndex;
         
         NSData *data = [[NSData alloc] initWithBytes:arr length:sizeof(arr)];
         NSError *err;
