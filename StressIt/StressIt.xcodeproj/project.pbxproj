@@ -7,18 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		670F8C8716332FCD00389004 /* timerTop.png in Resources */ = {isa = PBXBuildFile; fileRef = 670F8C8516332FCD00389004 /* timerTop.png */; };
-		670F8C8816332FCD00389004 /* timerUnder.png in Resources */ = {isa = PBXBuildFile; fileRef = 670F8C8616332FCD00389004 /* timerUnder.png */; };
 		67564BE71645A5DF007D2E9A /* lobster_14.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 67564BE61645A5DF007D2E9A /* lobster_14.ttf */; };
 		67564BE91645A8C0007D2E9A /* Lobster 1.4.otf in Resources */ = {isa = PBXBuildFile; fileRef = 67AF97BB16459247007A5270 /* Lobster 1.4.otf */; };
 		677575721631D57E00D2DD0A /* NLDictionaryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 677575701631D57E00D2DD0A /* NLDictionaryView.m */; };
 		677575731631D57E00D2DD0A /* NLDictionaryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 677575711631D57E00D2DD0A /* NLDictionaryView.xib */; };
-		677575751631E89700D2DD0A /* DictionaryBG.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 677575741631E89700D2DD0A /* DictionaryBG.jpg */; };
-		6775757D1632E23900D2DD0A /* Back.png in Resources */ = {isa = PBXBuildFile; fileRef = 6775757C1632E23900D2DD0A /* Back.png */; };
-		6775757F1632E55500D2DD0A /* Forward.png in Resources */ = {isa = PBXBuildFile; fileRef = 6775757E1632E55500D2DD0A /* Forward.png */; };
-		677575821632E78C00D2DD0A /* MainMenuButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 677575801632E78C00D2DD0A /* MainMenuButton.png */; };
-		677575831632E78C00D2DD0A /* MainMenuButtonHighlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = 677575811632E78C00D2DD0A /* MainMenuButtonHighlighted.png */; };
-		677575851632F1F800D2DD0A /* MainMenuTempBg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 677575841632F1F800D2DD0A /* MainMenuTempBg.jpg */; };
 		67AF97B91645661C007A5270 /* NLTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 67AF97B81645661C007A5270 /* NLTimer.m */; };
 		67AF97BC16459247007A5270 /* Lobster 1.4.otf in Resources */ = {isa = PBXBuildFile; fileRef = 67AF97BB16459247007A5270 /* Lobster 1.4.otf */; };
 		67C0DB8F1625DFDE00214C52 /* NLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 67C0DB8E1625DFDE00214C52 /* NLParser.m */; };
@@ -35,7 +27,6 @@
 		C92E4742163317EE00B53E34 /* Generator.m in Sources */ = {isa = PBXBuildFile; fileRef = C92E4741163317EE00B53E34 /* Generator.m */; };
 		C93228DE163C6F0D001536A1 /* NLSpinner.m in Sources */ = {isa = PBXBuildFile; fileRef = C93228DD163C6F0D001536A1 /* NLSpinner.m */; };
 		C93228E2163C78FD001536A1 /* NLLearningManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C93228E1163C78FD001536A1 /* NLLearningManager.m */; };
-		C932F8811626203600D9A34B /* TTTAttributedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = C932F8801626203600D9A34B /* TTTAttributedLabel.m */; };
 		C93943341646EE310043668B /* NLSetDaysViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C93943321646EE310043668B /* NLSetDaysViewController.m */; };
 		C93943351646EE310043668B /* NLSetDaysViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C93943331646EE310043668B /* NLSetDaysViewController.xib */; };
 		C9394339164700A50043668B /* NLWelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9394337164700A40043668B /* NLWelcomeViewController.m */; };
@@ -53,14 +44,6 @@
 		C93943771647B96C0043668B /* backToMenuButton.png in Resources */ = {isa = PBXBuildFile; fileRef = C939436D1647B96C0043668B /* backToMenuButton.png */; };
 		C939437F1647C77E0043668B /* NLResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C939437D1647C77C0043668B /* NLResultsViewController.m */; };
 		C93943801647C77E0043668B /* NLResultsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C939437E1647C77D0043668B /* NLResultsViewController.xib */; };
-		C95CD3E4165109B30015B2C5 /* NLCD_Task.m in Sources */ = {isa = PBXBuildFile; fileRef = C95CD3E3165109B30015B2C5 /* NLCD_Task.m */; };
-		C95CD3E7165109B30015B2C5 /* NLCD_Dictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = C95CD3E6165109B30015B2C5 /* NLCD_Dictionary.m */; };
-		C95CD3EA165109B30015B2C5 /* NLCD_Word.m in Sources */ = {isa = PBXBuildFile; fileRef = C95CD3E9165109B30015B2C5 /* NLCD_Word.m */; };
-		C95CD3ED165109B30015B2C5 /* NLCD_Block.m in Sources */ = {isa = PBXBuildFile; fileRef = C95CD3EC165109B30015B2C5 /* NLCD_Block.m */; };
-		C95CD3F0165109B40015B2C5 /* NLCD_Paragraph.m in Sources */ = {isa = PBXBuildFile; fileRef = C95CD3EF165109B40015B2C5 /* NLCD_Paragraph.m */; };
-		C986581D1625A6F60035FB7D /* NLWord.m in Sources */ = {isa = PBXBuildFile; fileRef = C986581C1625A6F60035FB7D /* NLWord.m */; };
-		C98658231625A7740035FB7D /* NLDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = C98658221625A7740035FB7D /* NLDictionary.m */; };
-		C98658291625A7990035FB7D /* NLWordBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = C98658281625A7990035FB7D /* NLWordBlock.m */; };
 		C98E2A2C1624B6A500AFC6AD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C98E2A2B1624B6A500AFC6AD /* UIKit.framework */; };
 		C98E2A2E1624B6A500AFC6AD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C98E2A2D1624B6A500AFC6AD /* Foundation.framework */; };
 		C98E2A301624B6A500AFC6AD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C98E2A2F1624B6A500AFC6AD /* CoreGraphics.framework */; };
@@ -68,8 +51,6 @@
 		C98E2A381624B6A600AFC6AD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C98E2A361624B6A600AFC6AD /* InfoPlist.strings */; };
 		C98E2A3A1624B6A600AFC6AD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C98E2A391624B6A600AFC6AD /* main.m */; };
 		C98E2A3E1624B6A600AFC6AD /* NLAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C98E2A3D1624B6A600AFC6AD /* NLAppDelegate.m */; };
-		C98E2A401624B6A600AFC6AD /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = C98E2A3F1624B6A600AFC6AD /* Default.png */; };
-		C98E2A441624B6A600AFC6AD /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C98E2A431624B6A600AFC6AD /* Default-568h@2x.png */; };
 		C98E2A4F1624B6A600AFC6AD /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C98E2A4E1624B6A600AFC6AD /* SenTestingKit.framework */; };
 		C98E2A501624B6A600AFC6AD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C98E2A2B1624B6A500AFC6AD /* UIKit.framework */; };
 		C98E2A511624B6A600AFC6AD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C98E2A2D1624B6A500AFC6AD /* Foundation.framework */; };
@@ -80,8 +61,27 @@
 		C98E2A6A1624B6EC00AFC6AD /* NLMainMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C98E2A681624B6EB00AFC6AD /* NLMainMenuViewController.xib */; };
 		C98E2A701624B83A00AFC6AD /* MainMenuTempBg.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = C98E2A6F1624B83A00AFC6AD /* MainMenuTempBg.jpeg */; };
 		C98E2AA11624BC1600AFC6AD /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C98E2AA01624BC1600AFC6AD /* CoreText.framework */; };
-		C98E2AA41624BD2600AFC6AD /* NLLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = C98E2AA31624BD2500AFC6AD /* NLLabel.m */; };
 		C9E2B5AD1646712600C1AE1E /* StressIt.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C98E2A451624B6A600AFC6AD /* StressIt.xcdatamodeld */; };
+		C9FDC68916B420480015C8B3 /* NLLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FDC68616B420480015C8B3 /* NLLabel.m */; };
+		C9FDC68A16B420480015C8B3 /* TTTAttributedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FDC68816B420480015C8B3 /* TTTAttributedLabel.m */; };
+		C9FDC69216B4207D0015C8B3 /* NLCD_Block.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FDC68D16B4207D0015C8B3 /* NLCD_Block.m */; };
+		C9FDC69316B4207D0015C8B3 /* NLCD_Dictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FDC68F16B4207D0015C8B3 /* NLCD_Dictionary.m */; };
+		C9FDC69416B4207D0015C8B3 /* NLCD_Word.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FDC69116B4207D0015C8B3 /* NLCD_Word.m */; };
+		C9FDC69916B420920015C8B3 /* NLCD_Paragraph.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FDC69616B420920015C8B3 /* NLCD_Paragraph.m */; };
+		C9FDC69A16B420920015C8B3 /* NLCD_Task.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FDC69816B420920015C8B3 /* NLCD_Task.m */; };
+		C9FDC6A816B420B40015C8B3 /* Back.png in Resources */ = {isa = PBXBuildFile; fileRef = C9FDC69B16B420B40015C8B3 /* Back.png */; };
+		C9FDC6A916B420B40015C8B3 /* Back.pxm in Resources */ = {isa = PBXBuildFile; fileRef = C9FDC69C16B420B40015C8B3 /* Back.pxm */; };
+		C9FDC6AA16B420B40015C8B3 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C9FDC69D16B420B40015C8B3 /* Default-568h@2x.png */; };
+		C9FDC6AB16B420B40015C8B3 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = C9FDC69E16B420B40015C8B3 /* Default.png */; };
+		C9FDC6AC16B420B40015C8B3 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C9FDC69F16B420B40015C8B3 /* Default@2x.png */; };
+		C9FDC6AD16B420B40015C8B3 /* DictionaryBG.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C9FDC6A016B420B40015C8B3 /* DictionaryBG.jpg */; };
+		C9FDC6AE16B420B40015C8B3 /* DictionaryBG.pxm in Resources */ = {isa = PBXBuildFile; fileRef = C9FDC6A116B420B40015C8B3 /* DictionaryBG.pxm */; };
+		C9FDC6AF16B420B40015C8B3 /* Forward.png in Resources */ = {isa = PBXBuildFile; fileRef = C9FDC6A216B420B40015C8B3 /* Forward.png */; };
+		C9FDC6B016B420B40015C8B3 /* MainMenuButton.png in Resources */ = {isa = PBXBuildFile; fileRef = C9FDC6A316B420B40015C8B3 /* MainMenuButton.png */; };
+		C9FDC6B116B420B40015C8B3 /* MainMenuButtonHighlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = C9FDC6A416B420B40015C8B3 /* MainMenuButtonHighlighted.png */; };
+		C9FDC6B216B420B40015C8B3 /* MainMenuTempBg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C9FDC6A516B420B40015C8B3 /* MainMenuTempBg.jpg */; };
+		C9FDC6B316B420B40015C8B3 /* timerTop.png in Resources */ = {isa = PBXBuildFile; fileRef = C9FDC6A616B420B40015C8B3 /* timerTop.png */; };
+		C9FDC6B416B420B40015C8B3 /* timerUnder.png in Resources */ = {isa = PBXBuildFile; fileRef = C9FDC6A716B420B40015C8B3 /* timerUnder.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,18 +95,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		670F8C8516332FCD00389004 /* timerTop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = timerTop.png; sourceTree = "<group>"; };
-		670F8C8616332FCD00389004 /* timerUnder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = timerUnder.png; sourceTree = "<group>"; };
 		67564BE61645A5DF007D2E9A /* lobster_14.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = lobster_14.ttf; sourceTree = "<group>"; };
 		6775756F1631D57E00D2DD0A /* NLDictionaryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NLDictionaryView.h; sourceTree = "<group>"; };
 		677575701631D57E00D2DD0A /* NLDictionaryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLDictionaryView.m; sourceTree = "<group>"; };
 		677575711631D57E00D2DD0A /* NLDictionaryView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NLDictionaryView.xib; sourceTree = "<group>"; };
-		677575741631E89700D2DD0A /* DictionaryBG.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = DictionaryBG.jpg; sourceTree = "<group>"; };
-		6775757C1632E23900D2DD0A /* Back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Back.png; sourceTree = "<group>"; };
-		6775757E1632E55500D2DD0A /* Forward.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Forward.png; sourceTree = "<group>"; };
-		677575801632E78C00D2DD0A /* MainMenuButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MainMenuButton.png; sourceTree = "<group>"; };
-		677575811632E78C00D2DD0A /* MainMenuButtonHighlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MainMenuButtonHighlighted.png; sourceTree = "<group>"; };
-		677575841632F1F800D2DD0A /* MainMenuTempBg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = MainMenuTempBg.jpg; sourceTree = "<group>"; };
 		67AF97B71645661C007A5270 /* NLTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NLTimer.h; sourceTree = "<group>"; };
 		67AF97B81645661C007A5270 /* NLTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLTimer.m; sourceTree = "<group>"; };
 		67AF97BB16459247007A5270 /* Lobster 1.4.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lobster 1.4.otf"; sourceTree = "<group>"; };
@@ -129,8 +121,6 @@
 		C93228DD163C6F0D001536A1 /* NLSpinner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLSpinner.m; sourceTree = "<group>"; };
 		C93228E0163C78FD001536A1 /* NLLearningManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NLLearningManager.h; sourceTree = "<group>"; };
 		C93228E1163C78FD001536A1 /* NLLearningManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLLearningManager.m; sourceTree = "<group>"; };
-		C932F87F1626203600D9A34B /* TTTAttributedLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTAttributedLabel.h; sourceTree = "<group>"; };
-		C932F8801626203600D9A34B /* TTTAttributedLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTAttributedLabel.m; sourceTree = "<group>"; };
 		C93943311646EE310043668B /* NLSetDaysViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NLSetDaysViewController.h; sourceTree = "<group>"; };
 		C93943321646EE310043668B /* NLSetDaysViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLSetDaysViewController.m; sourceTree = "<group>"; };
 		C93943331646EE310043668B /* NLSetDaysViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NLSetDaysViewController.xib; sourceTree = "<group>"; };
@@ -152,23 +142,7 @@
 		C939437C1647C77B0043668B /* NLResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NLResultsViewController.h; sourceTree = "<group>"; };
 		C939437D1647C77C0043668B /* NLResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLResultsViewController.m; sourceTree = "<group>"; };
 		C939437E1647C77D0043668B /* NLResultsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NLResultsViewController.xib; sourceTree = "<group>"; };
-		C95CD3E2165109B30015B2C5 /* NLCD_Task.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NLCD_Task.h; sourceTree = "<group>"; };
-		C95CD3E3165109B30015B2C5 /* NLCD_Task.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLCD_Task.m; sourceTree = "<group>"; };
-		C95CD3E5165109B30015B2C5 /* NLCD_Dictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NLCD_Dictionary.h; sourceTree = "<group>"; };
-		C95CD3E6165109B30015B2C5 /* NLCD_Dictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLCD_Dictionary.m; sourceTree = "<group>"; };
-		C95CD3E8165109B30015B2C5 /* NLCD_Word.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NLCD_Word.h; sourceTree = "<group>"; };
-		C95CD3E9165109B30015B2C5 /* NLCD_Word.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLCD_Word.m; sourceTree = "<group>"; };
-		C95CD3EB165109B30015B2C5 /* NLCD_Block.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NLCD_Block.h; sourceTree = "<group>"; };
-		C95CD3EC165109B30015B2C5 /* NLCD_Block.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLCD_Block.m; sourceTree = "<group>"; };
-		C95CD3EE165109B40015B2C5 /* NLCD_Paragraph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NLCD_Paragraph.h; sourceTree = "<group>"; };
-		C95CD3EF165109B40015B2C5 /* NLCD_Paragraph.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLCD_Paragraph.m; sourceTree = "<group>"; };
 		C97BAE6E1659688D0052FA38 /* Tasks.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Tasks.plist; sourceTree = "<group>"; };
-		C986581B1625A6F60035FB7D /* NLWord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NLWord.h; sourceTree = "<group>"; };
-		C986581C1625A6F60035FB7D /* NLWord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLWord.m; sourceTree = "<group>"; };
-		C98658211625A7740035FB7D /* NLDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NLDictionary.h; sourceTree = "<group>"; };
-		C98658221625A7740035FB7D /* NLDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLDictionary.m; sourceTree = "<group>"; };
-		C98658271625A7990035FB7D /* NLWordBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NLWordBlock.h; sourceTree = "<group>"; };
-		C98658281625A7990035FB7D /* NLWordBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLWordBlock.m; sourceTree = "<group>"; };
 		C98E2A271624B6A500AFC6AD /* Stress It.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Stress It.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C98E2A2B1624B6A500AFC6AD /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		C98E2A2D1624B6A500AFC6AD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -180,9 +154,6 @@
 		C98E2A3B1624B6A600AFC6AD /* StressIt-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "StressIt-Prefix.pch"; sourceTree = "<group>"; };
 		C98E2A3C1624B6A600AFC6AD /* NLAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NLAppDelegate.h; sourceTree = "<group>"; };
 		C98E2A3D1624B6A600AFC6AD /* NLAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NLAppDelegate.m; sourceTree = "<group>"; };
-		C98E2A3F1624B6A600AFC6AD /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		C98E2A411624B6A600AFC6AD /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		C98E2A431624B6A600AFC6AD /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		C98E2A461624B6A600AFC6AD /* StressIt.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = StressIt.xcdatamodel; sourceTree = "<group>"; };
 		C98E2A4D1624B6A600AFC6AD /* StressItTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StressItTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C98E2A4E1624B6A600AFC6AD /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -195,8 +166,33 @@
 		C98E2A681624B6EB00AFC6AD /* NLMainMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NLMainMenuViewController.xib; sourceTree = "<group>"; };
 		C98E2A6F1624B83A00AFC6AD /* MainMenuTempBg.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = MainMenuTempBg.jpeg; path = Content/TempImages/MainMenuTempBg.jpeg; sourceTree = SOURCE_ROOT; };
 		C98E2AA01624BC1600AFC6AD /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
-		C98E2AA21624BD2500AFC6AD /* NLLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NLLabel.h; sourceTree = "<group>"; };
-		C98E2AA31624BD2500AFC6AD /* NLLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLLabel.m; sourceTree = "<group>"; };
+		C9FDC68516B420480015C8B3 /* NLLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NLLabel.h; path = NLLabel/NLLabel.h; sourceTree = "<group>"; };
+		C9FDC68616B420480015C8B3 /* NLLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NLLabel.m; path = NLLabel/NLLabel.m; sourceTree = "<group>"; };
+		C9FDC68716B420480015C8B3 /* TTTAttributedLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTTAttributedLabel.h; path = NLLabel/TTTAttributedLabel.h; sourceTree = "<group>"; };
+		C9FDC68816B420480015C8B3 /* TTTAttributedLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TTTAttributedLabel.m; path = NLLabel/TTTAttributedLabel.m; sourceTree = "<group>"; };
+		C9FDC68C16B4207D0015C8B3 /* NLCD_Block.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NLCD_Block.h; path = CoreData/NLCD_Block.h; sourceTree = "<group>"; };
+		C9FDC68D16B4207D0015C8B3 /* NLCD_Block.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NLCD_Block.m; path = CoreData/NLCD_Block.m; sourceTree = "<group>"; };
+		C9FDC68E16B4207D0015C8B3 /* NLCD_Dictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NLCD_Dictionary.h; path = CoreData/NLCD_Dictionary.h; sourceTree = "<group>"; };
+		C9FDC68F16B4207D0015C8B3 /* NLCD_Dictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NLCD_Dictionary.m; path = CoreData/NLCD_Dictionary.m; sourceTree = "<group>"; };
+		C9FDC69016B4207D0015C8B3 /* NLCD_Word.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NLCD_Word.h; path = CoreData/NLCD_Word.h; sourceTree = "<group>"; };
+		C9FDC69116B4207D0015C8B3 /* NLCD_Word.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NLCD_Word.m; path = CoreData/NLCD_Word.m; sourceTree = "<group>"; };
+		C9FDC69516B420920015C8B3 /* NLCD_Paragraph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NLCD_Paragraph.h; path = CoreData/NLCD_Paragraph.h; sourceTree = "<group>"; };
+		C9FDC69616B420920015C8B3 /* NLCD_Paragraph.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NLCD_Paragraph.m; path = CoreData/NLCD_Paragraph.m; sourceTree = "<group>"; };
+		C9FDC69716B420920015C8B3 /* NLCD_Task.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NLCD_Task.h; path = CoreData/NLCD_Task.h; sourceTree = "<group>"; };
+		C9FDC69816B420920015C8B3 /* NLCD_Task.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NLCD_Task.m; path = CoreData/NLCD_Task.m; sourceTree = "<group>"; };
+		C9FDC69B16B420B40015C8B3 /* Back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Back.png; path = Textures/Back.png; sourceTree = "<group>"; };
+		C9FDC69C16B420B40015C8B3 /* Back.pxm */ = {isa = PBXFileReference; lastKnownFileType = file; name = Back.pxm; path = Textures/Back.pxm; sourceTree = "<group>"; };
+		C9FDC69D16B420B40015C8B3 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "Textures/Default-568h@2x.png"; sourceTree = "<group>"; };
+		C9FDC69E16B420B40015C8B3 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = Textures/Default.png; sourceTree = "<group>"; };
+		C9FDC69F16B420B40015C8B3 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "Textures/Default@2x.png"; sourceTree = "<group>"; };
+		C9FDC6A016B420B40015C8B3 /* DictionaryBG.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = DictionaryBG.jpg; path = Textures/DictionaryBG.jpg; sourceTree = "<group>"; };
+		C9FDC6A116B420B40015C8B3 /* DictionaryBG.pxm */ = {isa = PBXFileReference; lastKnownFileType = file; name = DictionaryBG.pxm; path = Textures/DictionaryBG.pxm; sourceTree = "<group>"; };
+		C9FDC6A216B420B40015C8B3 /* Forward.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Forward.png; path = Textures/Forward.png; sourceTree = "<group>"; };
+		C9FDC6A316B420B40015C8B3 /* MainMenuButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = MainMenuButton.png; path = Textures/MainMenuButton.png; sourceTree = "<group>"; };
+		C9FDC6A416B420B40015C8B3 /* MainMenuButtonHighlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = MainMenuButtonHighlighted.png; path = Textures/MainMenuButtonHighlighted.png; sourceTree = "<group>"; };
+		C9FDC6A516B420B40015C8B3 /* MainMenuTempBg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = MainMenuTempBg.jpg; path = Textures/MainMenuTempBg.jpg; sourceTree = "<group>"; };
+		C9FDC6A616B420B40015C8B3 /* timerTop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = timerTop.png; path = Textures/timerTop.png; sourceTree = "<group>"; };
+		C9FDC6A716B420B40015C8B3 /* timerUnder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = timerUnder.png; path = Textures/timerUnder.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -272,27 +268,14 @@
 			path = Textures;
 			sourceTree = "<group>";
 		};
-		C95CD3F1165109BE0015B2C5 /* Deprecated */ = {
-			isa = PBXGroup;
-			children = (
-				C986581B1625A6F60035FB7D /* NLWord.h */,
-				C986581C1625A6F60035FB7D /* NLWord.m */,
-				C98658271625A7990035FB7D /* NLWordBlock.h */,
-				C98658281625A7990035FB7D /* NLWordBlock.m */,
-				C98658211625A7740035FB7D /* NLDictionary.h */,
-				C98658221625A7740035FB7D /* NLDictionary.m */,
-			);
-			name = Deprecated;
-			sourceTree = "<group>";
-		};
 		C95CD3F2165109F80015B2C5 /* Tasks */ = {
 			isa = PBXGroup;
 			children = (
+				C9FDC69516B420920015C8B3 /* NLCD_Paragraph.h */,
+				C9FDC69616B420920015C8B3 /* NLCD_Paragraph.m */,
+				C9FDC69716B420920015C8B3 /* NLCD_Task.h */,
+				C9FDC69816B420920015C8B3 /* NLCD_Task.m */,
 				C97BAE6E1659688D0052FA38 /* Tasks.plist */,
-				C95CD3EE165109B40015B2C5 /* NLCD_Paragraph.h */,
-				C95CD3EF165109B40015B2C5 /* NLCD_Paragraph.m */,
-				C95CD3E2165109B30015B2C5 /* NLCD_Task.h */,
-				C95CD3E3165109B30015B2C5 /* NLCD_Task.m */,
 			);
 			name = Tasks;
 			sourceTree = "<group>";
@@ -300,12 +283,12 @@
 		C95CD3F316510A770015B2C5 /* Words */ = {
 			isa = PBXGroup;
 			children = (
-				C95CD3EB165109B30015B2C5 /* NLCD_Block.h */,
-				C95CD3EC165109B30015B2C5 /* NLCD_Block.m */,
-				C95CD3E8165109B30015B2C5 /* NLCD_Word.h */,
-				C95CD3E9165109B30015B2C5 /* NLCD_Word.m */,
-				C95CD3E5165109B30015B2C5 /* NLCD_Dictionary.h */,
-				C95CD3E6165109B30015B2C5 /* NLCD_Dictionary.m */,
+				C9FDC68C16B4207D0015C8B3 /* NLCD_Block.h */,
+				C9FDC68D16B4207D0015C8B3 /* NLCD_Block.m */,
+				C9FDC68E16B4207D0015C8B3 /* NLCD_Dictionary.h */,
+				C9FDC68F16B4207D0015C8B3 /* NLCD_Dictionary.m */,
+				C9FDC69016B4207D0015C8B3 /* NLCD_Word.h */,
+				C9FDC69116B4207D0015C8B3 /* NLCD_Word.m */,
 			);
 			name = Words;
 			sourceTree = "<group>";
@@ -324,11 +307,19 @@
 		C95CD3F516510AD10015B2C5 /* Pictures */ = {
 			isa = PBXGroup;
 			children = (
-				6775757E1632E55500D2DD0A /* Forward.png */,
-				6775757C1632E23900D2DD0A /* Back.png */,
-				C98E2A3F1624B6A600AFC6AD /* Default.png */,
-				C98E2A411624B6A600AFC6AD /* Default@2x.png */,
-				C98E2A431624B6A600AFC6AD /* Default-568h@2x.png */,
+				C9FDC69B16B420B40015C8B3 /* Back.png */,
+				C9FDC69C16B420B40015C8B3 /* Back.pxm */,
+				C9FDC69D16B420B40015C8B3 /* Default-568h@2x.png */,
+				C9FDC69E16B420B40015C8B3 /* Default.png */,
+				C9FDC69F16B420B40015C8B3 /* Default@2x.png */,
+				C9FDC6A016B420B40015C8B3 /* DictionaryBG.jpg */,
+				C9FDC6A116B420B40015C8B3 /* DictionaryBG.pxm */,
+				C9FDC6A216B420B40015C8B3 /* Forward.png */,
+				C9FDC6A316B420B40015C8B3 /* MainMenuButton.png */,
+				C9FDC6A416B420B40015C8B3 /* MainMenuButtonHighlighted.png */,
+				C9FDC6A516B420B40015C8B3 /* MainMenuTempBg.jpg */,
+				C9FDC6A616B420B40015C8B3 /* timerTop.png */,
+				C9FDC6A716B420B40015C8B3 /* timerUnder.png */,
 			);
 			name = Pictures;
 			sourceTree = "<group>";
@@ -340,7 +331,6 @@
 				C98E2A451624B6A600AFC6AD /* StressIt.xcdatamodeld */,
 				67C0DB8D1625DFDE00214C52 /* NLParser.h */,
 				67C0DB8E1625DFDE00214C52 /* NLParser.m */,
-				C95CD3F1165109BE0015B2C5 /* Deprecated */,
 				C95CD3F316510A770015B2C5 /* Words */,
 				C95CD3F2165109F80015B2C5 /* Tasks */,
 			);
@@ -371,10 +361,10 @@
 			children = (
 				C92E4740163317EE00B53E34 /* Generator.h */,
 				C92E4741163317EE00B53E34 /* Generator.m */,
-				C932F87F1626203600D9A34B /* TTTAttributedLabel.h */,
-				C932F8801626203600D9A34B /* TTTAttributedLabel.m */,
-				C98E2AA21624BD2500AFC6AD /* NLLabel.h */,
-				C98E2AA31624BD2500AFC6AD /* NLLabel.m */,
+				C9FDC68516B420480015C8B3 /* NLLabel.h */,
+				C9FDC68616B420480015C8B3 /* NLLabel.m */,
+				C9FDC68716B420480015C8B3 /* TTTAttributedLabel.h */,
+				C9FDC68816B420480015C8B3 /* TTTAttributedLabel.m */,
 				C93228E0163C78FD001536A1 /* NLLearningManager.h */,
 				C93228E1163C78FD001536A1 /* NLLearningManager.m */,
 			);
@@ -492,12 +482,6 @@
 		C98E2A6E1624B80A00AFC6AD /* Temp */ = {
 			isa = PBXGroup;
 			children = (
-				677575801632E78C00D2DD0A /* MainMenuButton.png */,
-				670F8C8516332FCD00389004 /* timerTop.png */,
-				670F8C8616332FCD00389004 /* timerUnder.png */,
-				677575811632E78C00D2DD0A /* MainMenuButtonHighlighted.png */,
-				677575741631E89700D2DD0A /* DictionaryBG.jpg */,
-				677575841632F1F800D2DD0A /* MainMenuTempBg.jpg */,
 				C98E2A6F1624B83A00AFC6AD /* MainMenuTempBg.jpeg */,
 			);
 			name = Temp;
@@ -579,19 +563,9 @@
 				67E4F9091647FBB500AC0C5B /* Cuprum.otf in Resources */,
 				67564BE91645A8C0007D2E9A /* Lobster 1.4.otf in Resources */,
 				C98E2A381624B6A600AFC6AD /* InfoPlist.strings in Resources */,
-				C98E2A401624B6A600AFC6AD /* Default.png in Resources */,
-				C98E2A441624B6A600AFC6AD /* Default-568h@2x.png in Resources */,
 				C98E2A6A1624B6EC00AFC6AD /* NLMainMenuViewController.xib in Resources */,
 				C98E2A701624B83A00AFC6AD /* MainMenuTempBg.jpeg in Resources */,
 				677575731631D57E00D2DD0A /* NLDictionaryView.xib in Resources */,
-				677575751631E89700D2DD0A /* DictionaryBG.jpg in Resources */,
-				6775757D1632E23900D2DD0A /* Back.png in Resources */,
-				6775757F1632E55500D2DD0A /* Forward.png in Resources */,
-				677575821632E78C00D2DD0A /* MainMenuButton.png in Resources */,
-				677575831632E78C00D2DD0A /* MainMenuButtonHighlighted.png in Resources */,
-				677575851632F1F800D2DD0A /* MainMenuTempBg.jpg in Resources */,
-				670F8C8716332FCD00389004 /* timerTop.png in Resources */,
-				670F8C8816332FCD00389004 /* timerUnder.png in Resources */,
 				C93943351646EE310043668B /* NLSetDaysViewController.xib in Resources */,
 				C939433A164700A50043668B /* NLWelcomeViewController.xib in Resources */,
 				C9394340164708BA0043668B /* NLCoreGameViewController.xib in Resources */,
@@ -609,6 +583,19 @@
 				C90D99B9165A1DC300E9DDF9 /* Default-Landscape@2x.png in Resources */,
 				73853FD8165ABE930006A530 /* NLGameViewController.xib in Resources */,
 				C92D547B1660DCBB00D14294 /* StressIt.sqlite in Resources */,
+				C9FDC6A816B420B40015C8B3 /* Back.png in Resources */,
+				C9FDC6A916B420B40015C8B3 /* Back.pxm in Resources */,
+				C9FDC6AA16B420B40015C8B3 /* Default-568h@2x.png in Resources */,
+				C9FDC6AB16B420B40015C8B3 /* Default.png in Resources */,
+				C9FDC6AC16B420B40015C8B3 /* Default@2x.png in Resources */,
+				C9FDC6AD16B420B40015C8B3 /* DictionaryBG.jpg in Resources */,
+				C9FDC6AE16B420B40015C8B3 /* DictionaryBG.pxm in Resources */,
+				C9FDC6AF16B420B40015C8B3 /* Forward.png in Resources */,
+				C9FDC6B016B420B40015C8B3 /* MainMenuButton.png in Resources */,
+				C9FDC6B116B420B40015C8B3 /* MainMenuButtonHighlighted.png in Resources */,
+				C9FDC6B216B420B40015C8B3 /* MainMenuTempBg.jpg in Resources */,
+				C9FDC6B316B420B40015C8B3 /* timerTop.png in Resources */,
+				C9FDC6B416B420B40015C8B3 /* timerUnder.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -651,12 +638,7 @@
 				C98E2A3A1624B6A600AFC6AD /* main.m in Sources */,
 				C98E2A3E1624B6A600AFC6AD /* NLAppDelegate.m in Sources */,
 				C98E2A691624B6EC00AFC6AD /* NLMainMenuViewController.m in Sources */,
-				C98E2AA41624BD2600AFC6AD /* NLLabel.m in Sources */,
-				C986581D1625A6F60035FB7D /* NLWord.m in Sources */,
-				C98658231625A7740035FB7D /* NLDictionary.m in Sources */,
-				C98658291625A7990035FB7D /* NLWordBlock.m in Sources */,
 				67C0DB8F1625DFDE00214C52 /* NLParser.m in Sources */,
-				C932F8811626203600D9A34B /* TTTAttributedLabel.m in Sources */,
 				677575721631D57E00D2DD0A /* NLDictionaryView.m in Sources */,
 				C92E4742163317EE00B53E34 /* Generator.m in Sources */,
 				C93228DE163C6F0D001536A1 /* NLSpinner.m in Sources */,
@@ -665,12 +647,14 @@
 				C9394339164700A50043668B /* NLWelcomeViewController.m in Sources */,
 				C939433F164708BA0043668B /* NLCoreGameViewController.m in Sources */,
 				C939437F1647C77E0043668B /* NLResultsViewController.m in Sources */,
-				C95CD3E4165109B30015B2C5 /* NLCD_Task.m in Sources */,
-				C95CD3E7165109B30015B2C5 /* NLCD_Dictionary.m in Sources */,
-				C95CD3EA165109B30015B2C5 /* NLCD_Word.m in Sources */,
-				C95CD3ED165109B30015B2C5 /* NLCD_Block.m in Sources */,
-				C95CD3F0165109B40015B2C5 /* NLCD_Paragraph.m in Sources */,
 				73853FD7165ABE930006A530 /* NLGameViewController.m in Sources */,
+				C9FDC68916B420480015C8B3 /* NLLabel.m in Sources */,
+				C9FDC68A16B420480015C8B3 /* TTTAttributedLabel.m in Sources */,
+				C9FDC69216B4207D0015C8B3 /* NLCD_Block.m in Sources */,
+				C9FDC69316B4207D0015C8B3 /* NLCD_Dictionary.m in Sources */,
+				C9FDC69416B4207D0015C8B3 /* NLCD_Word.m in Sources */,
+				C9FDC69916B420920015C8B3 /* NLCD_Paragraph.m in Sources */,
+				C9FDC69A16B420920015C8B3 /* NLCD_Task.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
