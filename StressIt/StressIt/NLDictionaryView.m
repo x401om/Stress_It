@@ -10,6 +10,9 @@
 #import "NLAppDelegate.h"
 #import "NLCD_Block.h"
 #define letterCount 30
+#define xOffset 20
+#define yOffset 30
+#define kTableViewsHeight 250;
 
 @interface NLDictionaryView ()
 
@@ -26,9 +29,33 @@
 {
   self = [super init];
   if (self) {
-    //[self initArrays];
+    //configuring basic view
+    CGRect viewFrame = [[UIScreen mainScreen] applicationFrame];
+    int a = viewFrame.size.width;
+    viewFrame.size.width = viewFrame.size.height;
+    viewFrame.size.height = a;
+    [self.view setFrame:viewFrame];
+    
+    //configuring table view's
+    CGPoint customCenter = self.view.center;
+    customCenter.y+=yOffset;
+    float offset = [[UIScreen mainScreen] bounds].size.height/2 - xOffset;
+    CGRect customFrame; //= tableViewLeft.frame;
+    customCenter.x-=offset/2;
+    customFrame.size.width = offset;
+    customFrame.size.height = kTableViewsHeight;
+    tableViewLeft.frame = customFrame;
+    tableViewLeft.center = customCenter;
+    customCenter.x+=offset;
+    tableViewRight.frame = customFrame;
+    tableViewRight.center = customCenter;
+    
+    //spin and shadow
     spin = [[NLSpinner alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 - 50,self.view.frame.size.height/2 -20, 100, 100) type:NLSpinnerTypeDefault startValue:0];
-    UIView* back = [[UIView alloc] initWithFrame:CGRectMake(tableViewLeft.frame.origin.x, tableViewLeft.frame.origin.y, tableViewLeft.frame.size.width + tableViewRight.frame.size.width, tableViewLeft.frame.size.height)];
+    customFrame.size.width = 2*offset;
+    customCenter.x -= offset/2;
+    UIView* back = [[UIView alloc] initWithFrame:/*CGRectMake(tableViewLeft.frame.origin.x, tableViewLeft.frame.origin.y, tableViewLeft.frame.size.width + tableViewRight.frame.size.width, tableViewLeft.frame.size.height)*/customFrame];
+    back.center = customCenter;
     back.backgroundColor = [UIColor blackColor];
     back.alpha = 0.5;
     back.tag = 1212;
