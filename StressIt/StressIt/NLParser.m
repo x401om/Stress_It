@@ -18,73 +18,71 @@
 
 + (void)parse {
   @autoreleasepool {
-    NSString *resourcePath = [[NSBundle mainBundle] pathForResource:@"All_Forms" ofType:@"txt"];
-    __block int count,bad;
+    
+    NSString *resourcePath = [[NSBundle mainBundle] pathForResource:@"All_Forms"
+                                                             ofType:@"txt"];
+    __block int count, bad;
     bad = 0;
     count = 0;
     NSError* error;
     NSDate* tempDate = [NSDate date];
-     NSString* file = [NSString stringWithContentsOfFile:resourcePath encoding:NSWindowsCP1251StringEncoding error:&error];
-    [file enumerateLinesUsingBlock:^(NSString* line, BOOL* stop){ @autoreleasepool {
-      NSMutableString* currentString = [line mutableCopy];
-      currentString = [[currentString substringFromIndex:[currentString rangeOfString:@"#"].location+1] mutableCopy];
-      NSRange range = [currentString rangeOfString:@","];
-      NSMutableArray* arrayForBlock = [NSMutableArray array];
-      while (range.length!=0) @autoreleasepool{
-        NSString* word = [currentString substringToIndex:range.location];
-        NSRange t = {0,range.location+1};
-        [currentString replaceCharactersInRange:t withString:@""];
-        range = [currentString rangeOfString:@","];
-        NSMutableArray* stressedArray = [NSMutableArray arrayWithCapacity:2];
-        NSRange stressRange = [word rangeOfString:@"'"];
-        while (stressRange.location!=NSNotFound) {
-          [stressedArray addObject:[NSNumber numberWithInt:stressRange.location - 1]];
-          word = [word stringByReplacingCharactersInRange:stressRange withString:@""];
-          stressRange = [word rangeOfString:@"'"];
-        }
-        
-        if ([stressedArray count]==0) {
-          NSLog(@"%@ bad",word);
-          ++bad;
-        }
-        else {
-          NLCD_Word* word1 = [NLCD_Word wordWithText:word andStressed:[stressedArray[0] intValue]];
-#warning new state
-           //word1.state = [NSNumber numberWithInt:NLWordStateNew];
-            
-          if([stressedArray count]==2)
-          {
-            word1.secondStressed = stressedArray[1];
+    NSString* file = [NSString stringWithContentsOfFile:resourcePath
+                                               encoding:NSWindowsCP1251StringEncoding
+                                                  error:&error];
+    [file enumerateLinesUsingBlock:^(NSString* line, BOOL* stop){
+      @autoreleasepool {
+        NSMutableString* currentString = [line mutableCopy];
+        currentString = [[currentString substringFromIndex:[currentString rangeOfString:@"#"].location+1] mutableCopy];
+        NSRange currentRange = [currentString rangeOfString:@","];
+        NSMutableArray* arrayForBlock = [NSMutableArray array];
+        while (currentRange.length!=0) @autoreleasepool {
+          NSString* currentWord = [currentString substringToIndex:currentRange.location];
+          NSRange currentRangeForWord = {0,currentRange.location+1};
+          [currentString replaceCharactersInRange:currentRangeForWord withString:@""];
+          currentRange = [currentString rangeOfString:@","];
+          NSMutableArray* stressedArray = [NSMutableArray arrayWithCapacity:2];
+          NSRange stressRange = [currentWord rangeOfString:@"'"];
+          while (stressRange.location!=NSNotFound) {
+            [stressedArray addObject:[NSNumber numberWithInt:stressRange.location - 1]];
+            currentWord = [currentWord stringByReplacingCharactersInRange:stressRange withString:@""];
+            stressRange = [currentWord rangeOfString:@"'"];
           }
-          [arrayForBlock addObject:word1];
-          
+          if ([stressedArray count]==0) {
+            NSLog(@"no stress found in word %@",currentWord);
+            ++bad;
+          }
+          else {
+            NLCD_Word* insertWord = [NLCD_Word wordWithText:currentWord
+                                           andStressed:[stressedArray[0] intValue]];
+            if([stressedArray count]==2)
+            {
+              insertWord.secondStressed = stressedArray[1];
+            }
+            [arrayForBlock addObject:insertWord];
+          }
+        }
+        NLCD_Block* block;
+        if([arrayForBlock count]!=0)
+        {
+          block = [NLCD_Block blockWithWords:arrayForBlock];
+          ++count;
+        
+        }
+        if (count==1000) {
+          [(NLAppDelegate*)[[UIApplication sharedApplication] delegate] saveContext];
+          [[(NLAppDelegate*)[[UIApplication sharedApplication] delegate] managedObjectContext] reset];
+          count = 0;
         }
       }
-      NLCD_Block* block;
-      if([arrayForBlock count]!=0)
-      {
-        block = [NLCD_Block blockWithWords:arrayForBlock];
-        ++count;
-        
-      }
-      if (count==1000) {
-        [(NLAppDelegate*)[[UIApplication sharedApplication] delegate] saveContext];
-        [[(NLAppDelegate*)[[UIApplication sharedApplication] delegate] managedObjectContext] reset];
-        count = 0;
-        //*stop = YES;
-      }
-    }}];
-
+    }];
     [(NLAppDelegate*)[[UIApplication sharedApplication] delegate] saveContext];
     [[(NLAppDelegate*)[[UIApplication sharedApplication] delegate] managedObjectContext] reset];
     [NLParser fillFavourites];
     [NLParser addTasks];
-    
     NSLog(@"%f",-[tempDate timeIntervalSinceNow]);
     NSLog(@"%d",bad);
   }
   [[NSNotificationCenter defaultCenter] postNotificationName:@"ParceDone" object:nil];
-
 }
 
 - (void) parse {
@@ -103,12 +101,14 @@
       [blocksArray addObject:newBlock];
     }
   }
-  [NLCD_Dictionary dictionaryWithBlocks:blocksArray andType:DictionaryTypeLearning];
+  [NLCD_Dictionary dictionaryWithBlocks:blocksArray
+                                andType:DictionaryTypeLearning];
   return;
 }
 
 + (void)addTasks {
-  NSString *resourcePath = [[NSBundle mainBundle] pathForResource:@"Tasks" ofType:@"plist"];
+  NSString *resourcePath = [[NSBundle mainBundle] pathForResource:@"Tasks"
+                                                           ofType:@"plist"];
   NSArray *data = [NSArray arrayWithContentsOfFile:resourcePath];
   int num = 0;
   for (NSDictionary *currentParagraph in data) {

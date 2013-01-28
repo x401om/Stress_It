@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6714570E16B70413001A17FD /* All_Forms.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6714570D16B70413001A17FD /* All_Forms.txt */; };
 		67564BE71645A5DF007D2E9A /* lobster_14.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 67564BE61645A5DF007D2E9A /* lobster_14.ttf */; };
 		67564BE91645A8C0007D2E9A /* Lobster 1.4.otf in Resources */ = {isa = PBXBuildFile; fileRef = 67AF97BB16459247007A5270 /* Lobster 1.4.otf */; };
 		677575721631D57E00D2DD0A /* NLDictionaryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 677575701631D57E00D2DD0A /* NLDictionaryView.m */; };
@@ -23,7 +24,6 @@
 		73853FDA165AC01E0006A530 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73853FD9165AC01E0006A530 /* GameKit.framework */; };
 		C90D99B6165A1DAA00E9DDF9 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C90D99B5165A1DAA00E9DDF9 /* Icon.png */; };
 		C90D99B9165A1DC300E9DDF9 /* Default-Landscape@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C90D99B8165A1DC300E9DDF9 /* Default-Landscape@2x.png */; };
-		C92D547B1660DCBB00D14294 /* StressIt.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = C92D547A1660DCBB00D14294 /* StressIt.sqlite */; };
 		C92E4742163317EE00B53E34 /* Generator.m in Sources */ = {isa = PBXBuildFile; fileRef = C92E4741163317EE00B53E34 /* Generator.m */; };
 		C93228DE163C6F0D001536A1 /* NLSpinner.m in Sources */ = {isa = PBXBuildFile; fileRef = C93228DD163C6F0D001536A1 /* NLSpinner.m */; };
 		C93228E2163C78FD001536A1 /* NLLearningManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C93228E1163C78FD001536A1 /* NLLearningManager.m */; };
@@ -95,6 +95,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6714570D16B70413001A17FD /* All_Forms.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = All_Forms.txt; sourceTree = "<group>"; };
 		67564BE61645A5DF007D2E9A /* lobster_14.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = lobster_14.ttf; sourceTree = "<group>"; };
 		6775756F1631D57E00D2DD0A /* NLDictionaryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NLDictionaryView.h; sourceTree = "<group>"; };
 		677575701631D57E00D2DD0A /* NLDictionaryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLDictionaryView.m; sourceTree = "<group>"; };
@@ -104,7 +105,6 @@
 		67AF97BB16459247007A5270 /* Lobster 1.4.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lobster 1.4.otf"; sourceTree = "<group>"; };
 		67C0DB8D1625DFDE00214C52 /* NLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NLParser.h; sourceTree = "<group>"; };
 		67C0DB8E1625DFDE00214C52 /* NLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLParser.m; sourceTree = "<group>"; };
-		67C0DBA11625E42E00214C52 /* All_Forms.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = All_Forms.txt; path = ../../All_Forms.txt; sourceTree = "<group>"; };
 		67E4F9031647FAEE00AC0C5B /* Cuprum.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Cuprum.otf; sourceTree = "<group>"; };
 		67E4F9061647FB5900AC0C5B /* Cuprum-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cuprum-Regular.ttf"; sourceTree = "<group>"; };
 		73853FD4165ABE930006A530 /* NLGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NLGameViewController.h; sourceTree = "<group>"; };
@@ -113,7 +113,6 @@
 		73853FD9165AC01E0006A530 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		C90D99B5165A1DAA00E9DDF9 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		C90D99B8165A1DC300E9DDF9 /* Default-Landscape@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape@2x.png"; sourceTree = "<group>"; };
-		C92D547A1660DCBB00D14294 /* StressIt.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = StressIt.sqlite; sourceTree = SOURCE_ROOT; };
 		C92E473A1633127C00B53E34 /* dataArr.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = dataArr.plist; sourceTree = "<group>"; };
 		C92E4740163317EE00B53E34 /* Generator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Generator.h; sourceTree = "<group>"; };
 		C92E4741163317EE00B53E34 /* Generator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Generator.m; sourceTree = "<group>"; };
@@ -423,11 +422,10 @@
 		C98E2A341624B6A600AFC6AD /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				C92D547A1660DCBB00D14294 /* StressIt.sqlite */,
 				C95CD3F416510AC00015B2C5 /* Fonts */,
 				C95CD3F516510AD10015B2C5 /* Pictures */,
-				67C0DBA11625E42E00214C52 /* All_Forms.txt */,
 				C98E2A351624B6A600AFC6AD /* StressIt-Info.plist */,
+				6714570D16B70413001A17FD /* All_Forms.txt */,
 				C98E2A361624B6A600AFC6AD /* InfoPlist.strings */,
 				C98E2A391624B6A600AFC6AD /* main.m */,
 				C98E2A3B1624B6A600AFC6AD /* StressIt-Prefix.pch */,
@@ -582,7 +580,6 @@
 				C90D99B6165A1DAA00E9DDF9 /* Icon.png in Resources */,
 				C90D99B9165A1DC300E9DDF9 /* Default-Landscape@2x.png in Resources */,
 				73853FD8165ABE930006A530 /* NLGameViewController.xib in Resources */,
-				C92D547B1660DCBB00D14294 /* StressIt.sqlite in Resources */,
 				C9FDC6A816B420B40015C8B3 /* Back.png in Resources */,
 				C9FDC6A916B420B40015C8B3 /* Back.pxm in Resources */,
 				C9FDC6AA16B420B40015C8B3 /* Default-568h@2x.png in Resources */,
@@ -596,6 +593,7 @@
 				C9FDC6B216B420B40015C8B3 /* MainMenuTempBg.jpg in Resources */,
 				C9FDC6B316B420B40015C8B3 /* timerTop.png in Resources */,
 				C9FDC6B416B420B40015C8B3 /* timerUnder.png in Resources */,
+				6714570E16B70413001A17FD /* All_Forms.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -23,7 +23,7 @@
   return;
 }
 
-- (void)copyToDocumentsFile:(NSString *)filename ofType:(NSString *)type {
+- (BOOL)copyToDocumentsFile:(NSString *)filename ofType:(NSString *)type {
   NSFileManager *fileManager = [NSFileManager defaultManager];
 	NSError *error;
 	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
@@ -34,11 +34,17 @@
 	
 	if ([fileManager fileExistsAtPath:txtPath] == NO) {
 		NSString *resourcePath = [[NSBundle mainBundle] pathForResource:filename ofType:type];
-		[fileManager copyItemAtPath:resourcePath toPath:txtPath error:&error];
+		if([fileManager fileExistsAtPath:resourcePath]) [fileManager copyItemAtPath:resourcePath toPath:txtPath error:&error];
+    else
+    {
+      NSLog(@"File %@.%@ do not exist",filename,type);
+      return NO;
+    }
 	}
   if (error) {
     NSLog(@"error :: %@", error);
   }
+  return YES;
 }
 
 
@@ -50,7 +56,7 @@
     [NLParser parse];
     [self saveContext];
   } else {
-    [self copyToDocumentsFile:@"StressIt" ofType:@"sqlite"];
+    if (![self copyToDocumentsFile:@"StressIt" ofType:@"sqlite"]) [NLParser parse];
   }    
   UINavigationController *navController = [[UINavigationController alloc]initWithRootViewController:[[NLMainMenuViewController alloc]init]];
   [navController setNavigationBarHidden:YES];
