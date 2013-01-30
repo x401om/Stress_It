@@ -9,6 +9,7 @@
 #import "NLAppDelegate.h"
 #import "NLMainMenuViewController.h"
 #import "NLParser.h"
+#import "NLStartUpDialog.h"
 
 #define kShouldParse 0
 
@@ -23,7 +24,7 @@
   return;
 }
 
-- (BOOL)copyToDocumentsFile:(NSString *)filename ofType:(NSString *)type {
++ (BOOL)copyToDocumentsFile:(NSString *)filename ofType:(NSString *)type {
   NSFileManager *fileManager = [NSFileManager defaultManager];
 	NSError *error;
 	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
@@ -52,13 +53,13 @@
 {
   self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
   self.window.backgroundColor = [UIColor whiteColor];
-  if (kShouldParse) {
+  /*if (kShouldParse) {
     [NLParser parse];
     [self saveContext];
   } else {
-    if (![self copyToDocumentsFile:@"StressIt" ofType:@"sqlite"]) [NLParser parse];
-  }    
-  UINavigationController *navController = [[UINavigationController alloc]initWithRootViewController:[[NLMainMenuViewController alloc]init]];
+    if (![NLAppDelegate copyToDocumentsFile:@"StressIt" ofType:@"sqlite"]) [NLParser parse];
+  } */   
+  UINavigationController *navController = [[UINavigationController alloc]initWithRootViewController:[[NLStartUpDialog alloc]init]];
   [navController setNavigationBarHidden:YES];
   self.window.rootViewController = navController;
   [self.window makeKeyAndVisible];

@@ -18,5 +18,6 @@
 
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;
++ (BOOL)copyToDocumentsFile:(NSString *)filename ofType:(NSString *)type;
 
 @end

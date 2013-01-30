@@ -8,9 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
+@class NLSpinner;
+
 @interface NLParser : NSObject
 
 + (void) parse;
++ (void)parseWithSpinner:(NLSpinner*)spinner;
+- (void)parseWithSpinner:(NLSpinner*)spinner;
 - (void) parse;
 + (void)addTasks;
 + (void)fillFavourites;

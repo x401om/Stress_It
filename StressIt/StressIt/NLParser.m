@@ -7,6 +7,7 @@
 //
 
 #import "NLParser.h"
+#import "NLSpinner.h"
 #import "NLCD_Word.h"
 #import "NLCD_Block.h"
 #import "NLCD_Dictionary.h"
@@ -16,7 +17,16 @@
 
 @implementation NLParser
 
-+ (void)parse {
++ (void)parse
+{
+  [NLParser parseWithSpinner:nil];
+}
+- (void)parseWithSpinner:(NLSpinner *)spinner
+{
+  [NLParser parseWithSpinner:spinner];
+}
+
++ (void)parseWithSpinner:(NLSpinner*)spinner {
   @autoreleasepool {
     
     NSString *resourcePath = [[NSBundle mainBundle] pathForResource:@"All_Forms"
@@ -66,12 +76,18 @@
         {
           block = [NLCD_Block blockWithWords:arrayForBlock];
           ++count;
-        
+          //
+          dispatch_async(dispatch_get_main_queue(), ^{
+            //[spinner changeProgress:count/86000 withValueAtCenter:count/860];
+            spinner.centerLabel.text = [@(count/859) stringValue];
+            spinner.time = 2*M_PI*count/85981;
+            [spinner setNeedsDisplay];
+          });
         }
-        if (count==1000) {
+        if (count%1000==0) {
           [(NLAppDelegate*)[[UIApplication sharedApplication] delegate] saveContext];
           [[(NLAppDelegate*)[[UIApplication sharedApplication] delegate] managedObjectContext] reset];
-          count = 0;
+          //count = 0;
         }
       }
     }];
@@ -79,8 +95,9 @@
     [[(NLAppDelegate*)[[UIApplication sharedApplication] delegate] managedObjectContext] reset];
     [NLParser fillFavourites];
     [NLParser addTasks];
-    NSLog(@"%f",-[tempDate timeIntervalSinceNow]);
-    NSLog(@"%d",bad);
+    NSLog(@"%f time elapsed",-[tempDate timeIntervalSinceNow]);
+    NSLog(@"%d total words w/o stress",bad);
+    NSLog(@"%d total words",count);
   }
   [[NSNotificationCenter defaultCenter] postNotificationName:@"ParceDone" object:nil];
 }
