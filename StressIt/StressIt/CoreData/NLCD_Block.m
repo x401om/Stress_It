@@ -24,6 +24,9 @@
   NLCD_Word *titleWord = [words objectAtIndex:0];
   newBlock.title = titleWord.text;
   newBlock.firstLetter = [newBlock.title substringToIndex:1];
+  if ([newBlock.firstLetter isEqualToString:@"ё"]) {
+    newBlock.firstLetter = @"е";
+  }
   return newBlock;
 }
 + (NSArray *)allBlocks {

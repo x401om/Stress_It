@@ -12,6 +12,8 @@
 		67564BE91645A8C0007D2E9A /* Lobster 1.4.otf in Resources */ = {isa = PBXBuildFile; fileRef = 67AF97BB16459247007A5270 /* Lobster 1.4.otf */; };
 		677575721631D57E00D2DD0A /* NLDictionaryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 677575701631D57E00D2DD0A /* NLDictionaryView.m */; };
 		677575731631D57E00D2DD0A /* NLDictionaryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 677575711631D57E00D2DD0A /* NLDictionaryView.xib */; };
+		679179F916B83DFD00E7D7F0 /* NLDictionaryViewDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 679179F716B83DFD00E7D7F0 /* NLDictionaryViewDetail.m */; };
+		679179FA16B83DFD00E7D7F0 /* NLDictionaryViewDetail.xib in Resources */ = {isa = PBXBuildFile; fileRef = 679179F816B83DFD00E7D7F0 /* NLDictionaryViewDetail.xib */; };
 		67AF97B91645661C007A5270 /* NLTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 67AF97B81645661C007A5270 /* NLTimer.m */; };
 		67AF97BC16459247007A5270 /* Lobster 1.4.otf in Resources */ = {isa = PBXBuildFile; fileRef = 67AF97BB16459247007A5270 /* Lobster 1.4.otf */; };
 		67C0DB8F1625DFDE00214C52 /* NLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 67C0DB8E1625DFDE00214C52 /* NLParser.m */; };
@@ -100,6 +102,9 @@
 		6775756F1631D57E00D2DD0A /* NLDictionaryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NLDictionaryView.h; sourceTree = "<group>"; };
 		677575701631D57E00D2DD0A /* NLDictionaryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLDictionaryView.m; sourceTree = "<group>"; };
 		677575711631D57E00D2DD0A /* NLDictionaryView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NLDictionaryView.xib; sourceTree = "<group>"; };
+		679179F616B83DFD00E7D7F0 /* NLDictionaryViewDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NLDictionaryViewDetail.h; sourceTree = "<group>"; };
+		679179F716B83DFD00E7D7F0 /* NLDictionaryViewDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLDictionaryViewDetail.m; sourceTree = "<group>"; };
+		679179F816B83DFD00E7D7F0 /* NLDictionaryViewDetail.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NLDictionaryViewDetail.xib; sourceTree = "<group>"; };
 		67AF97B71645661C007A5270 /* NLTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NLTimer.h; sourceTree = "<group>"; };
 		67AF97B81645661C007A5270 /* NLTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLTimer.m; sourceTree = "<group>"; };
 		67AF97BB16459247007A5270 /* Lobster 1.4.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lobster 1.4.otf"; sourceTree = "<group>"; };
@@ -346,6 +351,9 @@
 				6775756F1631D57E00D2DD0A /* NLDictionaryView.h */,
 				677575701631D57E00D2DD0A /* NLDictionaryView.m */,
 				677575711631D57E00D2DD0A /* NLDictionaryView.xib */,
+				679179F616B83DFD00E7D7F0 /* NLDictionaryViewDetail.h */,
+				679179F716B83DFD00E7D7F0 /* NLDictionaryViewDetail.m */,
+				679179F816B83DFD00E7D7F0 /* NLDictionaryViewDetail.xib */,
 				67AF97B71645661C007A5270 /* NLTimer.h */,
 				67AF97B81645661C007A5270 /* NLTimer.m */,
 				C93228DC163C6F0D001536A1 /* NLSpinner.h */,
@@ -594,6 +602,7 @@
 				C9FDC6B316B420B40015C8B3 /* timerTop.png in Resources */,
 				C9FDC6B416B420B40015C8B3 /* timerUnder.png in Resources */,
 				6714570E16B70413001A17FD /* All_Forms.txt in Resources */,
+				679179FA16B83DFD00E7D7F0 /* NLDictionaryViewDetail.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -653,6 +662,7 @@
 				C9FDC69416B4207D0015C8B3 /* NLCD_Word.m in Sources */,
 				C9FDC69916B420920015C8B3 /* NLCD_Paragraph.m in Sources */,
 				C9FDC69A16B420920015C8B3 /* NLCD_Task.m in Sources */,
+				679179F916B83DFD00E7D7F0 /* NLDictionaryViewDetail.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

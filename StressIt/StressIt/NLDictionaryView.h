@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "NLSpinner.h"
+#import "NLDictionaryViewDetail.h"
 
 @interface NLDictionaryView : UIViewController<UITableViewDelegate,NSFetchedResultsControllerDelegate,UISearchDisplayDelegate,UISearchBarDelegate>
 
@@ -15,6 +16,7 @@
 @property (nonatomic, retain) IBOutlet UITableView* tableViewLeft;
 @property (nonatomic, retain) IBOutlet UITableView* tableViewRight;
 @property (nonatomic, retain) IBOutlet UISearchDisplayController* searchDisplayController;
+@property (nonatomic, retain) IBOutlet UISearchBar* searchBar;
 @property NSArray* filteredObjects;
 @property NLSpinner* spin;
 @property NSFetchedResultsController* fetchResultsController;

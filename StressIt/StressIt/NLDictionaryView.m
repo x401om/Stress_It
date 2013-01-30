@@ -9,10 +9,11 @@
 #import "NLDictionaryView.h"
 #import "NLAppDelegate.h"
 #import "NLCD_Block.h"
-#define letterCount 30
+#import "NLCD_Word.h"
+#define letterCount 29
 #define xOffset 20
-#define yOffset 30
-#define kTableViewsHeight 250;
+#define yOffset 40
+#define kTableViewsHeight 220;
 
 @interface NLDictionaryView ()
 
@@ -24,6 +25,7 @@
 @synthesize fetchResultsController;
 @synthesize searchDisplayController;
 @synthesize filteredObjects;
+@synthesize searchBar;
 
 -(id)init
 {
@@ -50,11 +52,23 @@
     tableViewRight.frame = customFrame;
     tableViewRight.center = customCenter;
     
+    //configuring search box
+    customCenter.x -=offset/2;
+    int tableViewsHeight = kTableViewsHeight;
+    customFrame.size.width = 2*offset;
+    customFrame.size.height = 40;
+    customCenter.y -= 20 + tableViewsHeight/2;
+    CGPoint customCenter1 = searchBar.center;
+    customCenter1.x+=20;
+    searchBar.frame = customFrame;
+    searchBar.center = customCenter;
+    
+    
     //spin and shadow
     spin = [[NLSpinner alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 - 50,self.view.frame.size.height/2 -20, 100, 100) type:NLSpinnerTypeDefault startValue:0];
-    customFrame.size.width = 2*offset;
-    customCenter.x -= offset/2;
-    UIView* back = [[UIView alloc] initWithFrame:/*CGRectMake(tableViewLeft.frame.origin.x, tableViewLeft.frame.origin.y, tableViewLeft.frame.size.width + tableViewRight.frame.size.width, tableViewLeft.frame.size.height)*/customFrame];
+    customFrame.size.height = 40+kTableViewsHeight;
+    customCenter.y += tableViewsHeight/2;
+    UIView* back = [[UIView alloc] initWithFrame:customFrame];
     back.center = customCenter;
     back.backgroundColor = [UIColor blackColor];
     back.alpha = 0.5;
@@ -62,6 +76,9 @@
     [self.view addSubview:back];
     [self.view addSubview:spin];
     [spin startSpin];
+    
+    
+    //[self initArrays];
     [self performSelectorInBackground:@selector(initArrays) withObject:nil];
   }
   return self;
@@ -76,12 +93,19 @@
   NSFetchRequest *request = [[NSFetchRequest alloc] init];
   [request setEntity:entityDescription];
   
-  NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc]
-                                      initWithKey:@"title" ascending:YES selector:@selector(localizedCaseInsensitiveCompare:)];
+  NSSortDescriptor *sortDescriptor = /*[[NSSortDescriptor alloc]
+                                      initWithKey:@"title"
+                                      ascending:YES
+                                      comparator:^(NSString* s1, NSString* s2){
+                                       
+                                        return NSOrderedSame;
+    //return [s1 compare:s2 options:NSCaseInsensitiveSearch | NSNumericSearch |
+            //NSWidthInsensitiveSearch | NSForcedOrderingSearch];
+                                      }];*/
+  [NSSortDescriptor sortDescriptorWithKey:@"title" ascending:YES selector:@selector(localizedCaseInsensitiveCompare:)];
   [request setSortDescriptors:@[sortDescriptor]];
-  
-  [request setFetchBatchSize:20];
-  
+  [NSFetchedResultsController deleteCacheWithName:@"Root"];
+  [request setFetchBatchSize:0];
   NSFetchedResultsController *theFetchedResultsController =
   [[NSFetchedResultsController alloc] initWithFetchRequest:request
                                       managedObjectContext:managedObjectContext sectionNameKeyPath:@"firstLetter"
@@ -90,6 +114,7 @@
   fetchResultsController.delegate = self;
   [fetchResultsController performFetch:nil];
   filteredObjects = nil;
+  NSLog(@"%@",[[NSLocale preferredLanguages] objectAtIndex:0]);
   [tableViewLeft performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:YES];
   [tableViewRight performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:YES];
   [UIView animateWithDuration:0.3 animations:^{
@@ -120,70 +145,70 @@
     case 4:
       return @"д";
       break;
+    /*case 5:
+      return @"е";
+      break;*/
     case 5:
       return @"е";
       break;
     case 6:
-      return @"ё";
-      break;
-    case 7:
       return @"ж";
       break;
-    case 8:
+    case 7:
       return @"з";
       break;
-    case 9:
+    case 8:
       return @"и";
       break;
-    case 10:
+    case 9:
       return @"й";
       break;
-    case 11:
+    case 10:
       return @"к";
       break;
-    case 12:
+    case 11:
       return @"л";
       break;
-    case 13:
+    case 12:
       return @"м";
       break;
-    case 14:
+    case 13:
       return @"н";
       break;
-    case 15:
+    case 14:
       return @"о";
       break;
-    case 16:
+    case 15:
       return @"п";
       break;
-    case 17:
+    case 16:
       return @"р";
       break;
-    case 18:
+    case 17:
       return @"с";
       break;
-    case 19:
+    case 18:
       return @"т";
       break;
-    case 20:
+    case 19:
       return @"у";
       break;
-    case 21:
+    case 20:
       return @"ф";
       break;
-    case 22:
+    case 21:
       return @"х";
       break;
-    case 23:
+    case 22:
       return @"ц";
       break;
-    case 24:
+    case 23:
       return @"ч";
       break;
-    case 25:
+    case 24:
       return @"ш";
       break;
-    case 26:
+    case 25:
       return @"щ";
       break;
     /*case 27:
@@ -195,13 +220,13 @@
     case 29:
       return @"ь";
       break;*/
-    case 27:
+    case 26:
       return @"э";
       break;
-    case 28:
+    case 27:
       return @"ю";
       break;
-    case 29:
+    case 28:
       return @"я";
       break;
       
@@ -239,17 +264,6 @@
   }
 }
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
-
-
 -(IBAction)goToMainMenu:(id)sender
 {
   [self.navigationController popViewControllerAnimated:YES];
@@ -261,13 +275,6 @@
     // Do any additional setup after loading the view from its nib.
   [tableViewLeft setShowsVerticalScrollIndicator:NO];
 }
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 
 #pragma mark - Table view data source
 
@@ -304,8 +311,9 @@
   
   // Configure the cell...
   if (tableView == [searchDisplayController searchResultsTableView]) {
+    NLCD_Word* currentWord = [[[filteredObjects objectAtIndex:indexPath.row] wordsArray] objectAtIndex:0];
     
-    cell.textLabel.text = [[filteredObjects objectAtIndex:indexPath.row] title];
+    cell.textLabel.text = [currentWord description];
     return cell;
   }
   
@@ -313,8 +321,8 @@
   
   if(tableView == tableViewLeft) ind = [NSIndexPath indexPathForRow:(indexPath.row*2) inSection:indexPath.section];
   if(tableView == tableViewRight) ind = [NSIndexPath indexPathForRow:(indexPath.row*2 + 1) inSection:indexPath.section];
-    NLCD_Block *info = [fetchResultsController objectAtIndexPath:ind];
-  cell.textLabel.text = info.title;
+    NLCD_Word *info = [[fetchResultsController objectAtIndexPath:ind] wordsArray][0];
+  cell.textLabel.text = info.description;
   
   return cell;
 }
@@ -371,20 +379,35 @@ shouldReloadTableForSearchString:(NSString *)searchString
   filteredObjects = [[fetchResultsController fetchedObjects] filteredArrayUsingPredicate:resultPredicate];
   [[searchDisplayController searchResultsTableView] performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:NO];
 }
-
-- (void)searchDisplayController:(UISearchDisplayController *)controller didLoadSearchResultsTableView:(UITableView *)tableView
+-(void)searchBarCancelButtonClicked:(UISearchBar *)searchBar
 {
-
+  
 }
 
--(void)searchDisplayController:(UISearchDisplayController *)controller didShowSearchResultsTableView:(UITableView *)tableView {
-  tableView.frame = CGRectMake(tableViewLeft.frame.origin.x, tableViewLeft.frame.origin.y, tableViewLeft.frame.size.width + tableViewRight.frame.size.width, tableViewLeft.frame.size.height);
-}
--(void)searchDisplayControllerWillBeginSearch:(UISearchDisplayController *)controller
+
+-(NSString*)makeAccentOnWord:(NSString*)string withAccent:(NSInteger)accent
 {
-  //[UIView animateWithDuration:0.5 animations:^{
-    [searchDisplayController.searchBar setFrame:CGRectMake(0, 0, self.view.frame.size.width, 40)];
-  //}];
+  NSString* result = [NSString stringWithFormat:@"%@\u0301%@",[string substringToIndex:accent],[string substringFromIndex:accent]];
+  return result;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+  NSIndexPath* normalIndexPath;
+  if (tableView == tableViewLeft) {
+    normalIndexPath = [NSIndexPath indexPathForRow:indexPath.row*2 inSection:indexPath.section];
+  }
+  if (tableView == tableViewRight) {
+    normalIndexPath = [NSIndexPath indexPathForRow:indexPath.row*2+1 inSection:indexPath.section];
+  }
+  NLDictionaryViewDetail* temp = [[NLDictionaryViewDetail alloc] initWithBlock:[fetchResultsController objectAtIndexPath:normalIndexPath]];
+  [self.navigationController pushViewController:temp animated:YES];
+  [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+-(BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
+{
+  return (toInterfaceOrientation==UIInterfaceOrientationLandscapeLeft)||(toInterfaceOrientation==UIInterfaceOrientationLandscapeRight);
 }
 
 
