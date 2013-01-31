@@ -14,6 +14,8 @@
 		677575731631D57E00D2DD0A /* NLDictionaryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 677575711631D57E00D2DD0A /* NLDictionaryView.xib */; };
 		67784E8416B9CDC1008A768F /* NLStartUpDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 67784E8216B9CDC1008A768F /* NLStartUpDialog.m */; };
 		67784E8516B9CDC1008A768F /* NLStartUpDialog.xib in Resources */ = {isa = PBXBuildFile; fileRef = 67784E8316B9CDC1008A768F /* NLStartUpDialog.xib */; };
+		67784E8716BACF84008A768F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67784E8616BACF84008A768F /* QuartzCore.framework */; };
+		67784E8916BAD680008A768F /* cancel.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 67784E8816BAD680008A768F /* cancel.jpg */; };
 		679179F916B83DFD00E7D7F0 /* NLDictionaryViewDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 679179F716B83DFD00E7D7F0 /* NLDictionaryViewDetail.m */; };
 		679179FA16B83DFD00E7D7F0 /* NLDictionaryViewDetail.xib in Resources */ = {isa = PBXBuildFile; fileRef = 679179F816B83DFD00E7D7F0 /* NLDictionaryViewDetail.xib */; };
 		67AF97B91645661C007A5270 /* NLTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 67AF97B81645661C007A5270 /* NLTimer.m */; };
@@ -107,6 +109,8 @@
 		67784E8116B9CDC1008A768F /* NLStartUpDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NLStartUpDialog.h; sourceTree = "<group>"; };
 		67784E8216B9CDC1008A768F /* NLStartUpDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLStartUpDialog.m; sourceTree = "<group>"; };
 		67784E8316B9CDC1008A768F /* NLStartUpDialog.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NLStartUpDialog.xib; sourceTree = "<group>"; };
+		67784E8616BACF84008A768F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		67784E8816BAD680008A768F /* cancel.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cancel.jpg; sourceTree = "<group>"; };
 		679179F616B83DFD00E7D7F0 /* NLDictionaryViewDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NLDictionaryViewDetail.h; sourceTree = "<group>"; };
 		679179F716B83DFD00E7D7F0 /* NLDictionaryViewDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLDictionaryViewDetail.m; sourceTree = "<group>"; };
 		679179F816B83DFD00E7D7F0 /* NLDictionaryViewDetail.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NLDictionaryViewDetail.xib; sourceTree = "<group>"; };
@@ -209,6 +213,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67784E8716BACF84008A768F /* QuartzCore.framework in Frameworks */,
 				73853FDA165AC01E0006A530 /* GameKit.framework in Frameworks */,
 				C98E2AA11624BC1600AFC6AD /* CoreText.framework in Frameworks */,
 				C98E2A2C1624B6A500AFC6AD /* UIKit.framework in Frameworks */,
@@ -264,6 +269,7 @@
 		C93943631647B96C0043668B /* Textures */ = {
 			isa = PBXGroup;
 			children = (
+				67784E8816BAD680008A768F /* cancel.jpg */,
 				C93943641647B96C0043668B /* backgroung.png */,
 				C93943651647B96C0043668B /* dictionaryButton.png */,
 				C93943661647B96C0043668B /* darkGrayButton.png */,
@@ -410,6 +416,7 @@
 		C98E2A2A1624B6A500AFC6AD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				67784E8616BACF84008A768F /* QuartzCore.framework */,
 				73853FD9165AC01E0006A530 /* GameKit.framework */,
 				C98E2AA01624BC1600AFC6AD /* CoreText.framework */,
 				C98E2A2B1624B6A500AFC6AD /* UIKit.framework */,
@@ -612,6 +619,7 @@
 				6714570E16B70413001A17FD /* All_Forms.txt in Resources */,
 				679179FA16B83DFD00E7D7F0 /* NLDictionaryViewDetail.xib in Resources */,
 				67784E8516B9CDC1008A768F /* NLStartUpDialog.xib in Resources */,
+				67784E8916BAD680008A768F /* cancel.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

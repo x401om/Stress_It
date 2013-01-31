@@ -11,6 +11,7 @@
 #import "NLCD_Block.h"
 #import "NLCD_Word.h"
 #import <dispatch/dispatch.h>
+#import <QuartzCore/QuartzCore.h>
 #define letterCount 29
 #define xOffset 20
 #define yOffset 40
@@ -48,11 +49,43 @@
     customCenter.x-=offset/2;
     customFrame.size.width = offset;
     customFrame.size.height = kTableViewsHeight;
+    
+    UIView* temp = [[UIView alloc] initWithFrame:customFrame];
+    [tableViewLeft removeFromSuperview];
+    [tableViewLeft setFrame:tableViewLeft.bounds];
+    [temp addSubview:tableViewLeft];
+    [self.view addSubview:temp];
+    UIBezierPath *maskPath = [UIBezierPath bezierPathWithRoundedRect:temp.bounds
+                                                   byRoundingCorners:UIRectCornerTopLeft|UIRectCornerBottomLeft
+                                                         cornerRadii:CGSizeMake(5.0, 5.0)];
+    // Create the shape layer and set its path
+    CAShapeLayer *maskLayer = [CAShapeLayer layer];
+    maskLayer.frame = temp.bounds;
+    maskLayer.path = maskPath.CGPath;
+    
+    // Set the newly created shape layer as the mask for the image view's layer
+    temp.layer.mask = maskLayer;
+    
     tableViewLeft.frame = customFrame;
-    tableViewLeft.center = customCenter;
+    temp.center = customCenter;//tableViewLeft.center = customCenter;
+    
+    temp = [[UIView alloc] initWithFrame:customFrame];
+    [tableViewRight removeFromSuperview];
+    [temp addSubview:tableViewRight];
+    [self.view addSubview:temp];
     customCenter.x+=offset;
+    
+    maskPath = [UIBezierPath bezierPathWithRoundedRect:temp.bounds
+                                     byRoundingCorners:UIRectCornerTopRight|UIRectCornerBottomRight
+                                           cornerRadii:CGSizeMake(5.0, 5.0)];
+    // Create the shape layer and set its path
+    maskLayer = [CAShapeLayer layer];
+    maskLayer.frame = temp.bounds;
+    maskLayer.path = maskPath.CGPath;
+    // Set the newly created shape layer as the mask for the image view's layer
+    temp.layer.mask = maskLayer;
     tableViewRight.frame = customFrame;
-    tableViewRight.center = customCenter;
+    temp.center = customCenter;//tableViewRight.center = customCenter;
     
     //configuring search box
     customCenter.x -=offset/2 + 20;
@@ -66,6 +99,9 @@
     CGPoint cancelCenter = customCenter;
     cancelCenter.x+=offset;
     cancelButton.center = cancelCenter;
+    searchBar.layer.cornerRadius = 5;
+    searchBar.font = [UIFont fontWithName:@"Cuprum-Regular" size:18];
+    searchBar.textColor = [UIColor grayColor];
     
     
     //spin and shadow
@@ -281,6 +317,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
   [tableViewLeft setShowsVerticalScrollIndicator:NO];
+ 
+  tableViewLeft.separatorStyle = UITableViewCellSeparatorStyleNone;
+    tableViewRight.separatorStyle = UITableViewCellSeparatorStyleNone;
+  
 }
 
 #pragma mark - Table view data source
@@ -315,6 +355,8 @@
   if (cell == nil) {
     cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
   }
+  cell.textLabel.font = [UIFont fontWithName:@"Cuprum-Regular" size:18];
+  cell.textLabel.textColor = [UIColor grayColor];
   
   // Configure the cell...
   NLCD_Word* currentWord;
@@ -386,7 +428,6 @@
                                   searchText];
   
   filteredObjects = [[fetchResultsController fetchedObjects] filteredArrayUsingPredicate:resultPredicate];
-  //[[searchDisplayController searchResultsTableView] performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:NO];
 }
 
 
@@ -445,30 +486,6 @@
   
     filteredObjects = [[fetchResultsController fetchedObjects] filteredArrayUsingPredicate:resultPredicate];
     if ([filteredObjects count]) {
-      /*dispatch_queue_t ba = dispatch_queue_create("background_update", NULL);
-      
-      // 2) Add to top of dealloc
-      dispatch_async(ba, ^{
-        filteredObjects = [filteredObjects sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
-          if ([[obj1 title] rangeOfString:[sender text]].location==0) {
-            if ([[obj2 title] rangeOfString:[sender text]].location==0) {
-              return NSOrderedSame;
-            }
-            else return NSOrderedAscending;
-          }
-          else if ([[obj2 title] rangeOfString:[sender text]].location==0) {
-            return NSOrderedDescending;
-          }
-          else return [[obj1 title] compare:[obj2 title]];
-        }];
-        dispatch_async(dispatch_get_main_queue(), ^{
-          [tableViewLeft setContentOffset:CGPointZero];
-          [tableViewRight setContentOffset:CGPointZero];
-          [tableViewLeft reloadData];
-          [tableViewRight reloadData];
-        });
-        NSLog(@"ddsd");
-      });*/
       [self performSelectorInBackground:@selector(sortNormalUsingString:) withObject:[sender text]];
     }
     else {

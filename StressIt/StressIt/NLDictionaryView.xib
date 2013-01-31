@@ -139,7 +139,7 @@
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{384, 11}, {81, 30}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
-						<reference key="NSNextKeyView" ref="457272219"/>
+						<reference key="NSNextKeyView" ref="183321787"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -163,12 +163,12 @@
 						<reference key="IBUIFontDescription" ref="816823153"/>
 						<reference key="IBUIFont" ref="1001848138"/>
 					</object>
-					<object class="IBUITextField" id="457272219">
+					<object class="IBUITextField" id="183321787">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{42, 49}, {437, 30}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
-						<reference key="NSNextKeyView" ref="975529517"/>
+						<reference key="NSNextKeyView" ref="232785560"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
@@ -176,29 +176,24 @@
 						<int key="IBUIContentVerticalAlignment">0</int>
 						<string key="IBUIText"/>
 						<int key="IBUIBorderStyle">3</int>
-						<object class="NSColor" key="IBUITextColor">
-							<int key="NSColorSpace">3</int>
-							<bytes key="NSWhite">MAA</bytes>
-							<object class="NSColorSpace" key="NSCustomColorSpace">
-								<int key="NSID">2</int>
-							</object>
-						</object>
 						<bool key="IBUIAdjustsFontSizeToFit">YES</bool>
 						<float key="IBUIMinimumFontSize">17</float>
 						<object class="IBUITextInputTraits" key="IBUITextInputTraits">
+							<int key="IBUIReturnKeyType">6</int>
+							<bool key="IBUIEnablesReturnKeyAutomatically">YES</bool>
 							<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						</object>
 						<object class="IBUIFontDescription" key="IBUIFontDescription">
 							<int key="type">1</int>
-							<double key="pointSize">14</double>
+							<double key="pointSize">18</double>
 						</object>
 						<object class="NSFont" key="IBUIFont">
 							<string key="NSName">Helvetica</string>
-							<double key="NSSize">14</double>
+							<double key="NSSize">18</double>
 							<int key="NSfFlags">16</int>
 						</object>
 					</object>
-					<object class="IBUIButton" id="975529517">
+					<object class="IBUIButton" id="232785560">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{483, 42}, {37, 44}}</string>
@@ -209,14 +204,16 @@
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<int key="IBUIContentHorizontalAlignment">0</int>
 						<int key="IBUIContentVerticalAlignment">0</int>
-						<int key="IBUIButtonType">1</int>
-						<string key="IBUINormalTitle">Х</string>
 						<reference key="IBUIHighlightedTitleColor" ref="581161639"/>
 						<object class="NSColor" key="IBUINormalTitleColor">
 							<int key="NSColorSpace">1</int>
 							<bytes key="NSRGB">MC4xOTYwNzg0MzE0IDAuMzA5ODAzOTIxNiAwLjUyMTU2ODYyNzUAA</bytes>
 						</object>
 						<reference key="IBUINormalTitleShadowColor" ref="166160404"/>
+						<object class="NSCustomResource" key="IBUINormalImage">
+							<string key="NSClassName">NSImage</string>
+							<string key="NSResourceName">cancel.jpg</string>
+						</object>
 						<object class="IBUIFontDescription" key="IBUIFontDescription">
 							<int key="type">2</int>
 							<int key="size">2</int>
@@ -289,7 +286,7 @@
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">searchBar</string>
 						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="457272219"/>
+						<reference key="destination" ref="183321787"/>
 					</object>
 					<int key="connectionID">335</int>
 				</object>
@@ -297,7 +294,7 @@
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">cancelButton</string>
 						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="975529517"/>
+						<reference key="destination" ref="232785560"/>
 					</object>
 					<int key="connectionID">337</int>
 				</object>
@@ -345,7 +342,7 @@
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
 						<string key="label">searchbarChangeText:</string>
-						<reference key="source" ref="457272219"/>
+						<reference key="source" ref="183321787"/>
 						<reference key="destination" ref="372490531"/>
 						<int key="IBEventType">18</int>
 					</object>
@@ -354,7 +351,7 @@
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
 						<string key="label">cancelSearch:</string>
-						<reference key="source" ref="975529517"/>
+						<reference key="source" ref="232785560"/>
 						<reference key="destination" ref="372490531"/>
 						<int key="IBEventType">7</int>
 					</object>
@@ -378,8 +375,8 @@
 							<reference ref="827850425"/>
 							<reference ref="960092290"/>
 							<reference ref="353083468"/>
-							<reference ref="457272219"/>
-							<reference ref="975529517"/>
+							<reference ref="183321787"/>
+							<reference ref="232785560"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -426,12 +423,12 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">334</int>
-						<reference key="object" ref="457272219"/>
+						<reference key="object" ref="183321787"/>
 						<reference key="parent" ref="191373211"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">336</int>
-						<reference key="object" ref="975529517"/>
+						<reference key="object" ref="232785560"/>
 						<reference key="parent" ref="191373211"/>
 					</object>
 				</array>
@@ -473,6 +470,7 @@
 			<string key="Forward.png">{97, 37}</string>
 			<string key="backToMenuButton.png">{162, 60}</string>
 			<string key="backgroung.png">{960, 640}</string>
+			<string key="cancel.jpg">{87, 78}</string>
 		</dictionary>
 		<string key="IBCocoaTouchPluginVersion">2083</string>
 	</data>
