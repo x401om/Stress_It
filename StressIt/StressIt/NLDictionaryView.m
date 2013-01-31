@@ -10,6 +10,7 @@
 #import "NLAppDelegate.h"
 #import "NLCD_Block.h"
 #import "NLCD_Word.h"
+#import <dispatch/dispatch.h>
 #define letterCount 29
 #define xOffset 20
 #define yOffset 40
@@ -444,29 +445,69 @@
   
     filteredObjects = [[fetchResultsController fetchedObjects] filteredArrayUsingPredicate:resultPredicate];
     if ([filteredObjects count]) {
-      int start=0, end=0;
-      while ([[[[[filteredObjects objectAtIndex:start] wordsArray] objectAtIndex:0] text] rangeOfString:[sender text]].location!=0) {
-      start++;
-      }
-      end = start;
-      while ([[[[[filteredObjects objectAtIndex:end] wordsArray] objectAtIndex:0] text] rangeOfString:[sender text]].location==0) {
-        end++;
-      }
-    NSIndexSet* ind = [NSIndexSet indexSetWithIndexesInRange:NSMakeRange(start, end-start)];
-    NSArray* tempArray = [filteredObjects objectsAtIndexes:ind];
-    NSMutableArray* tempCopy = [filteredObjects mutableCopy];
-    [tempCopy removeObjectsAtIndexes:ind];
-    filteredObjects = [tempArray arrayByAddingObjectsFromArray:tempCopy];
+      /*dispatch_queue_t ba = dispatch_queue_create("background_update", NULL);
+      
+      // 2) Add to top of dealloc
+      dispatch_async(ba, ^{
+        filteredObjects = [filteredObjects sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+          if ([[obj1 title] rangeOfString:[sender text]].location==0) {
+            if ([[obj2 title] rangeOfString:[sender text]].location==0) {
+              return NSOrderedSame;
+            }
+            else return NSOrderedAscending;
+          }
+          else if ([[obj2 title] rangeOfString:[sender text]].location==0) {
+            return NSOrderedDescending;
+          }
+          else return [[obj1 title] compare:[obj2 title]];
+        }];
+        dispatch_async(dispatch_get_main_queue(), ^{
+          [tableViewLeft setContentOffset:CGPointZero];
+          [tableViewRight setContentOffset:CGPointZero];
+          [tableViewLeft reloadData];
+          [tableViewRight reloadData];
+        });
+        NSLog(@"ddsd");
+      });*/
+      [self performSelectorInBackground:@selector(sortNormalUsingString:) withObject:[sender text]];
+    }
+    else {
+      [tableViewLeft setContentOffset:CGPointZero];
+      [tableViewRight setContentOffset:CGPointZero];
+      [tableViewLeft reloadData];
+      [tableViewRight reloadData];
     }
   }
   else
   {
     searchEnabled = NO;
+    [tableViewLeft setContentOffset:CGPointZero];
+    [tableViewRight setContentOffset:CGPointZero];
+    [tableViewLeft reloadData];
+    [tableViewRight reloadData];
   }
-  [tableViewLeft setContentOffset:CGPointZero];
-  [tableViewRight setContentOffset:CGPointZero];
-  [tableViewLeft reloadData];
-  [tableViewRight reloadData];
+}
+
+-(void)sortNormalUsingString:(NSString*)string
+{
+  filteredObjects = [filteredObjects sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+    if ([[obj1 title] rangeOfString:string].location==0) {
+      if ([[obj2 title] rangeOfString:string].location==0) {
+        return NSOrderedSame;
+      }
+      else return NSOrderedAscending;
+    }
+    else if ([[obj2 title] rangeOfString:string].location==0) {
+      return NSOrderedDescending;
+    }
+    else return [[obj1 title] compare:[obj2 title]];
+  }];
+  dispatch_async(dispatch_get_main_queue(), ^{
+    [tableViewLeft setContentOffset:CGPointZero];
+    [tableViewRight setContentOffset:CGPointZero];
+    [tableViewLeft reloadData];
+    [tableViewRight reloadData];
+  });
 }
 
 @end

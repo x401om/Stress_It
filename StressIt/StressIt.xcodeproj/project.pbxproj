@@ -235,9 +235,9 @@
 		73853FCD165ABE140006A530 /* Game */ = {
 			isa = PBXGroup;
 			children = (
-				67784E8116B9CDC1008A768F /* NLStartUpDialog.h */,
-				67784E8216B9CDC1008A768F /* NLStartUpDialog.m */,
-				67784E8316B9CDC1008A768F /* NLStartUpDialog.xib */,
+				73853FD4165ABE930006A530 /* NLGameViewController.h */,
+				73853FD5165ABE930006A530 /* NLGameViewController.m */,
+				73853FD6165ABE930006A530 /* NLGameViewController.xib */,
 			);
 			name = Game;
 			sourceTree = "<group>";
@@ -350,9 +350,9 @@
 			isa = PBXGroup;
 			children = (
 				73853FCD165ABE140006A530 /* Game */,
-				73853FD4165ABE930006A530 /* NLGameViewController.h */,
-				73853FD5165ABE930006A530 /* NLGameViewController.m */,
-				73853FD6165ABE930006A530 /* NLGameViewController.xib */,
+				67784E8116B9CDC1008A768F /* NLStartUpDialog.h */,
+				67784E8216B9CDC1008A768F /* NLStartUpDialog.m */,
+				67784E8316B9CDC1008A768F /* NLStartUpDialog.xib */,
 				C98E2A661624B6EB00AFC6AD /* NLMainMenuViewController.h */,
 				C98E2A671624B6EB00AFC6AD /* NLMainMenuViewController.m */,
 				C98E2A681624B6EB00AFC6AD /* NLMainMenuViewController.xib */,
