@@ -8,11 +8,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "StressIt/NLDictionaryView.m"
-         timestampString = "381157434.064112"
+         timestampString = "381330079.039344"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "35"
-         endingLineNumber = "35"
+         startingLineNumber = "36"
+         endingLineNumber = "36"
          landmarkName = "-init"
          landmarkType = "5">
       </FileBreakpoint>
@@ -21,25 +21,12 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "StressIt/NLDictionaryView.m"
-         timestampString = "381157434.064112"
+         timestampString = "381330079.039344"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "42"
-         endingLineNumber = "42"
+         startingLineNumber = "43"
+         endingLineNumber = "43"
          landmarkName = "-init"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "StressIt/NLDictionaryView.m"
-         timestampString = "381170356.025962"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "117"
-         endingLineNumber = "117"
-         landmarkName = "-initArrays"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint

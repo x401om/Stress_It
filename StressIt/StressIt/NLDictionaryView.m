@@ -23,9 +23,10 @@
 @synthesize arrayOfWords,tableViewLeft,tableViewRight;
 @synthesize spin;
 @synthesize fetchResultsController;
-@synthesize searchDisplayController;
 @synthesize filteredObjects;
 @synthesize searchBar;
+@synthesize searchEnabled;
+@synthesize cancelButton;
 
 -(id)init
 {
@@ -53,21 +54,25 @@
     tableViewRight.center = customCenter;
     
     //configuring search box
-    customCenter.x -=offset/2;
+    customCenter.x -=offset/2 + 20;
     int tableViewsHeight = kTableViewsHeight;
-    customFrame.size.width = 2*offset;
+    customFrame.size.width = 2*offset - 40;
     customFrame.size.height = 40;
     customCenter.y -= 20 + tableViewsHeight/2;
-    CGPoint customCenter1 = searchBar.center;
-    customCenter1.x+=20;
     searchBar.frame = customFrame;
     searchBar.center = customCenter;
+    cancelButton.frame = CGRectMake(0, 0, 40, 40);
+    CGPoint cancelCenter = customCenter;
+    cancelCenter.x+=offset;
+    cancelButton.center = cancelCenter;
     
     
     //spin and shadow
     spin = [[NLSpinner alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2 - 50,self.view.frame.size.height/2 -20, 100, 100) type:NLSpinnerTypeDefault startValue:0];
     customFrame.size.height = 40+kTableViewsHeight;
+    customFrame.size.width +=40;
     customCenter.y += tableViewsHeight/2;
+    customCenter.x+=20;
     UIView* back = [[UIView alloc] initWithFrame:customFrame];
     back.center = customCenter;
     back.backgroundColor = [UIColor blackColor];
@@ -79,6 +84,7 @@
     
     
     //[self initArrays];
+    searchEnabled = NO;
     [self performSelectorInBackground:@selector(initArrays) withObject:nil];
   }
   return self;
@@ -282,7 +288,7 @@
 {
 //#warning Potentially incomplete method implementation.
   // Return the number of sections.
-  if (tableView == [searchDisplayController searchResultsTableView]) {
+  if (searchEnabled) {
     return 1;
   }
   return [[fetchResultsController sections] count];//[arrayOfWords count];
@@ -293,8 +299,8 @@
 //#warning Incomplete method implementation.
   // Return the number of rows in the section.
   //return [[arrayOfWords objectAtIndex:section] count]/2;
-  if (tableView == [searchDisplayController searchResultsTableView]) {
-    return [filteredObjects count];
+  if (searchEnabled) {
+    return [filteredObjects count]/2;
   }
   id  sectionInfo =
   [[fetchResultsController sections] objectAtIndex:section];
@@ -310,19 +316,20 @@
   }
   
   // Configure the cell...
-  if (tableView == [searchDisplayController searchResultsTableView]) {
-    NLCD_Word* currentWord = [[[filteredObjects objectAtIndex:indexPath.row] wordsArray] objectAtIndex:0];
-    
-    cell.textLabel.text = [currentWord description];
-    return cell;
+  NLCD_Word* currentWord;
+  if (searchEnabled) {
+    if(tableView == tableViewLeft) currentWord = [[[filteredObjects objectAtIndex:indexPath.row*2] wordsArray] objectAtIndex:0];
+    if(tableView == tableViewRight) currentWord = [[[filteredObjects objectAtIndex:indexPath.row*2+1] wordsArray] objectAtIndex:0];
   }
+  else
+  {
+    NSIndexPath* ind;
   
-  NSIndexPath* ind;
-  
-  if(tableView == tableViewLeft) ind = [NSIndexPath indexPathForRow:(indexPath.row*2) inSection:indexPath.section];
-  if(tableView == tableViewRight) ind = [NSIndexPath indexPathForRow:(indexPath.row*2 + 1) inSection:indexPath.section];
-    NLCD_Word *info = [[fetchResultsController objectAtIndexPath:ind] wordsArray][0];
-  cell.textLabel.text = info.description;
+    if(tableView == tableViewLeft) ind = [NSIndexPath indexPathForRow:(indexPath.row*2) inSection:indexPath.section];
+    if(tableView == tableViewRight) ind = [NSIndexPath indexPathForRow:(indexPath.row*2 + 1) inSection:indexPath.section];
+    currentWord = [[fetchResultsController objectAtIndexPath:ind] wordsArray][0];
+  }
+  cell.textLabel.text = currentWord.description;
   
   return cell;
 }
@@ -339,16 +346,26 @@
   }
 }
 
+-(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
+{
+  [self.view endEditing:YES];
+}
+
 -(NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
+  if (searchEnabled)
+  {
+    if(tableView==tableViewLeft) return @"Результаты";
+    else return @" ";
+  }
   if(tableView == tableViewLeft) return [self getKeyFromNumber:section];
   if(tableView == tableViewRight) return @" ";
-  if (tableView == [searchDisplayController searchResultsTableView]) return @"Найденные результаты";
+  
   return nil;
 }
 
 -(NSArray*)sectionIndexTitlesForTableView:(UITableView *)tableView {
-  if (tableView == tableViewRight) {
+  if (tableView == tableViewRight && !searchEnabled) {
     NSMutableArray* ar = [NSMutableArray arrayWithCapacity:letterCount];
     for (int i=0; i<letterCount; ++i) {
       [ar addObject:[self getKeyFromNumber:i]];
@@ -360,15 +377,6 @@
 }
 
 #pragma mark - UISearchDisplayController delegate methods
--(BOOL)searchDisplayController:(UISearchDisplayController *)controller
-shouldReloadTableForSearchString:(NSString *)searchString
-{
-  [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(filterContentForSearchText:) object:nil];
-  [self performSelectorInBackground:@selector(filterContentForSearchText:) withObject:searchString];
-  //[self filterContentForSearchText:searchString];
-  
-  return YES;
-}
 
 - (void)filterContentForSearchText:(NSString*)searchText
 {
@@ -377,11 +385,7 @@ shouldReloadTableForSearchString:(NSString *)searchString
                                   searchText];
   
   filteredObjects = [[fetchResultsController fetchedObjects] filteredArrayUsingPredicate:resultPredicate];
-  [[searchDisplayController searchResultsTableView] performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:NO];
-}
--(void)searchBarCancelButtonClicked:(UISearchBar *)searchBar
-{
-  
+  //[[searchDisplayController searchResultsTableView] performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:NO];
 }
 
 
@@ -394,11 +398,22 @@ shouldReloadTableForSearchString:(NSString *)searchString
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
   NSIndexPath* normalIndexPath;
-  if (tableView == tableViewLeft) {
-    normalIndexPath = [NSIndexPath indexPathForRow:indexPath.row*2 inSection:indexPath.section];
+  if (searchEnabled==NO) {
+    if (tableView == tableViewLeft) {
+      normalIndexPath = [NSIndexPath indexPathForRow:indexPath.row*2 inSection:indexPath.section];
+    }
+    if (tableView == tableViewRight) {
+      normalIndexPath = [NSIndexPath indexPathForRow:indexPath.row*2+1 inSection:indexPath.section];
+    }
   }
-  if (tableView == tableViewRight) {
-    normalIndexPath = [NSIndexPath indexPathForRow:indexPath.row*2+1 inSection:indexPath.section];
+  else {
+    
+    if (tableView == tableViewLeft) {
+      normalIndexPath = [fetchResultsController indexPathForObject:[filteredObjects objectAtIndex:indexPath.row*2]];;
+    }
+    if (tableView == tableViewRight) {
+      normalIndexPath = [fetchResultsController indexPathForObject:[filteredObjects objectAtIndex:indexPath.row*2+1]];;
+    }
   }
   NLDictionaryViewDetail* temp = [[NLDictionaryViewDetail alloc] initWithBlock:[fetchResultsController objectAtIndexPath:normalIndexPath]];
   [self.navigationController pushViewController:temp animated:YES];
@@ -410,5 +425,48 @@ shouldReloadTableForSearchString:(NSString *)searchString
   return (toInterfaceOrientation==UIInterfaceOrientationLandscapeLeft)||(toInterfaceOrientation==UIInterfaceOrientationLandscapeRight);
 }
 
+-(IBAction)cancelSearch:(id)sender
+{
+  searchEnabled = NO;
+  searchBar.text = @"";
+  [self.view endEditing:YES];
+  [tableViewLeft reloadData];
+  [tableViewRight reloadData];
+}
+
+-(IBAction)searchbarChangeText:(id)sender
+{
+  if (![[sender text] isEqualToString:@""]) {
+    searchEnabled = YES;
+    NSPredicate *resultPredicate = [NSPredicate
+                                  predicateWithFormat:@"SELF.title contains[cd] %@",
+                                  [sender text]];
+  
+    filteredObjects = [[fetchResultsController fetchedObjects] filteredArrayUsingPredicate:resultPredicate];
+    if ([filteredObjects count]) {
+      int start=0, end=0;
+      while ([[[[[filteredObjects objectAtIndex:start] wordsArray] objectAtIndex:0] text] rangeOfString:[sender text]].location!=0) {
+      start++;
+      }
+      end = start;
+      while ([[[[[filteredObjects objectAtIndex:end] wordsArray] objectAtIndex:0] text] rangeOfString:[sender text]].location==0) {
+        end++;
+      }
+    NSIndexSet* ind = [NSIndexSet indexSetWithIndexesInRange:NSMakeRange(start, end-start)];
+    NSArray* tempArray = [filteredObjects objectsAtIndexes:ind];
+    NSMutableArray* tempCopy = [filteredObjects mutableCopy];
+    [tempCopy removeObjectsAtIndexes:ind];
+    filteredObjects = [tempArray arrayByAddingObjectsFromArray:tempCopy];
+    }
+  }
+  else
+  {
+    searchEnabled = NO;
+  }
+  [tableViewLeft setContentOffset:CGPointZero];
+  [tableViewRight setContentOffset:CGPointZero];
+  [tableViewLeft reloadData];
+  [tableViewRight reloadData];
+}
 
 @end

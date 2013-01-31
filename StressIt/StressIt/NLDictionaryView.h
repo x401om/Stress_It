@@ -15,10 +15,11 @@
 @property (nonatomic, retain) NSMutableArray* arrayOfWords;
 @property (nonatomic, retain) IBOutlet UITableView* tableViewLeft;
 @property (nonatomic, retain) IBOutlet UITableView* tableViewRight;
-@property (nonatomic, retain) IBOutlet UISearchDisplayController* searchDisplayController;
-@property (nonatomic, retain) IBOutlet UISearchBar* searchBar;
+@property (nonatomic, retain) IBOutlet UITextField* searchBar;
+@property (nonatomic, retain) IBOutlet UIButton* cancelButton;
 @property NSArray* filteredObjects;
 @property NLSpinner* spin;
 @property NSFetchedResultsController* fetchResultsController;
+@property BOOL searchEnabled;
 
 @end
